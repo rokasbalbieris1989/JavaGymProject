@@ -13,6 +13,7 @@ com\javagym\controllers\UserController.class
 com\javagym\security\CustomUserDetailsService.class
 com\javagym\services\ProductService.class
 com\javagym\services\UserService.class
+.netbeans_automatic_build
 com\javagym\services\ProductServiceImpl.class
 com\javagym\configurations\HibernateConfiguration.class
 com\javagym\services\TrainerService.class

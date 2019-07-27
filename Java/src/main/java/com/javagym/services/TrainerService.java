@@ -14,15 +14,13 @@ import java.util.List;
  */
 public interface TrainerService {
 
-    Trainer findById(int id);
+   Trainer findById(int id);
 
-    Trainer findBySSO(String sso);
+    void saveTrainer(Trainer trainer);
 
-    void saveUser(Trainer trainer);
+    void updateTrainer(Trainer trainer);
 
-    void updateUser(Trainer trainer);
+    void deleteTrainerById(int id);
 
-    void deleteUserBySSO(String sso);
-
-    List<Trainer> findAllUsers();
+    List<Trainer> findAllTrainers();
 }

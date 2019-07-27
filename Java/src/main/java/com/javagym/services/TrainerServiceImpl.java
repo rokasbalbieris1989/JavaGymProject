@@ -5,44 +5,53 @@
  */
 package com.javagym.services;
 
-import com.javagym.services.TrainerService;
+import com.javagym.daos.TrainerDao;
 import com.javagym.entities.Trainer;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  *
  * @author me
  */
-public class TrainerServiceImpl implements TrainerService{
+@Service("trainerService")
+@Transactional
+public class TrainerServiceImpl implements TrainerService {
+
+    @Autowired
+    private TrainerDao dao;
 
     @Override
     public Trainer findById(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return dao.findById(id);
     }
 
     @Override
-    public Trainer findBySSO(String sso) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void saveTrainer(Trainer trainer) {
+        dao.save(trainer);
     }
 
     @Override
-    public void saveUser(Trainer trainer) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void updateTrainer(Trainer trainer) {
+        Trainer entity = dao.findById(trainer.getIdtrainer());
+		if(entity!=null){
+			entity.setFirstName(trainer.getFirstName());
+			entity.setLastName(trainer.getLastName());
+			entity.setEmail(trainer.getEmail());
+			entity.setSubject(trainer.getSubject());
+		}       
     }
 
     @Override
-    public void updateUser(Trainer trainer) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void deleteTrainerById(int id) {
+        dao.deleteById(id);
     }
 
     @Override
-    public void deleteUserBySSO(String sso) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public List<Trainer> findAllTrainers() {
+        return dao.findAllTrainers();
     }
 
-    @Override
-    public List<Trainer> findAllUsers() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
 }

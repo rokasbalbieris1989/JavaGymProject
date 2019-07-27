@@ -13,13 +13,12 @@ import java.util.List;
  * @author me
  */
 public interface TrainerDao {
+
     Trainer findById(int id);
-	
-	Trainer findBySSO(String sso);
-	
-	void save(Trainer trainer);
-	
-	void deleteBySSO(String sso);
-	
-	List<Trainer> findAllUsers();
+
+    void save(Trainer trainer);
+
+    void deleteById(int id);
+
+    List<Trainer> findAllTrainers();
 }

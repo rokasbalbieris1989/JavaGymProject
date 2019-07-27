@@ -5,40 +5,49 @@
  */
 package com.javagym.daos;
 
-import com.javagym.daos.TrainerDao;
-import com.javagym.daos.AbstractDao;
 import com.javagym.entities.Trainer;
 import java.util.List;
+import org.hibernate.Criteria;
+import org.hibernate.Hibernate;
+import org.hibernate.criterion.Restrictions;
+import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author me
  */
-public class TrainerDaoImpl extends AbstractDao<Integer, Trainer> implements TrainerDao{
+@Repository("trainerDao")
+public class TrainerDaoImpl extends AbstractDao<Integer, Trainer> implements TrainerDao {
 
     @Override
     public Trainer findById(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public Trainer findBySSO(String sso) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Trainer trainer = getByKey(id);
+        if (trainer != null) {
+            Hibernate.initialize(trainer.getIdtrainer());
+        }
+        return trainer;
     }
 
     @Override
     public void save(Trainer trainer) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        persist(trainer);
+    }
+
+    @SuppressWarnings("unchecked")
+    @Override
+    public void deleteById(int id) {
+        Criteria crit = createEntityCriteria();
+        crit.add(Restrictions.eq("Id", id));
+        Trainer trainer = (Trainer) crit.uniqueResult();
+        delete(trainer);
     }
 
     @Override
-    public void deleteBySSO(String sso) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public List<Trainer> findAllTrainers() {
+        Criteria criteria = createEntityCriteria();
+        criteria.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);//To avoid duplicates.
+        List<Trainer> trainers = (List<Trainer>) criteria.list();
+        return trainers;
     }
 
-    @Override
-    public List<Trainer> findAllUsers() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
 }

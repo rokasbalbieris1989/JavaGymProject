@@ -1,14 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.javagym.entities;
 
-/**
- *
- * @author me
- */
 import java.io.Serializable;
 import java.util.Objects;
 import javax.persistence.Column;
@@ -20,15 +11,14 @@ import javax.persistence.Table;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
-@Table(name = "products")
+@Table(name = "product")
 public class Product implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @NotEmpty
-    @Column(name = "idproducts", nullable = false)
-    private Integer idproducts;
-
+    @Column(name = "idproduct", nullable = false)
+    private Integer idproduct;
 
     @NotEmpty
     @Column(name = "prices", nullable = false)
@@ -45,16 +35,24 @@ public class Product implements Serializable {
     @NotEmpty
     @Column(name = "descriptions", nullable = false)
     private String descriptions;
-    
+
+    @NotEmpty
+    @Column(name = "category", nullable = false)
+    private String category;
+
+    @NotEmpty
+    @Column(name = "brand", nullable = false)
+    private String brand;
+
     public Product() {
     }
 
     public Integer getIdproducts() {
-        return idproducts;
+        return idproduct;
     }
 
-    public void setIdproducts(Integer idproducts) {
-        this.idproducts = idproducts;
+    public void setIdproducts(Integer idproduct) {
+        this.idproduct = idproduct;
     }
 
     public Integer getPrices() {
@@ -89,16 +87,32 @@ public class Product implements Serializable {
         this.descriptions = descriptions;
     }
 
-    
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 59 * hash + Objects.hashCode(this.idproducts);
-        hash = 59 * hash + Objects.hashCode(this.prices);
-        hash = 59 * hash + Objects.hashCode(this.stoc);
-        hash = 59 * hash + Objects.hashCode(this.images);
-        hash = 59 * hash + Objects.hashCode(this.descriptions);
+        int hash = 3;
+        hash = 71 * hash + Objects.hashCode(this.idproduct);
+        hash = 71 * hash + Objects.hashCode(this.prices);
+        hash = 71 * hash + Objects.hashCode(this.stoc);
+        hash = 71 * hash + Objects.hashCode(this.images);
+        hash = 71 * hash + Objects.hashCode(this.descriptions);
+        hash = 71 * hash + Objects.hashCode(this.category);
+        hash = 71 * hash + Objects.hashCode(this.brand);
         return hash;
     }
 
@@ -114,7 +128,19 @@ public class Product implements Serializable {
             return false;
         }
         final Product other = (Product) obj;
-        if (!Objects.equals(this.idproducts, other.idproducts)) {
+        if (!Objects.equals(this.images, other.images)) {
+            return false;
+        }
+        if (!Objects.equals(this.descriptions, other.descriptions)) {
+            return false;
+        }
+        if (!Objects.equals(this.category, other.category)) {
+            return false;
+        }
+        if (!Objects.equals(this.brand, other.brand)) {
+            return false;
+        }
+        if (!Objects.equals(this.idproduct, other.idproduct)) {
             return false;
         }
         if (!Objects.equals(this.prices, other.prices)) {
@@ -123,21 +149,17 @@ public class Product implements Serializable {
         if (!Objects.equals(this.stoc, other.stoc)) {
             return false;
         }
-        if (!Objects.equals(this.images, other.images)) {
-            return false;
-        }
-        if (!Objects.equals(this.descriptions, other.descriptions)) {
-            return false;
-        }
         return true;
     }
 
-    public Product(Integer idproducts, Integer userproductIdId, Integer prices, Integer stoc, String images, String descriptions) {
-        this.idproducts = idproducts;
+    public Product(Integer idproduct, Integer prices, Integer stoc, String images, String descriptions, String category, String brand) {
+        this.idproduct = idproduct;
         this.prices = prices;
         this.stoc = stoc;
         this.images = images;
         this.descriptions = descriptions;
+        this.category = category;
+        this.brand = brand;
     }
 
 }

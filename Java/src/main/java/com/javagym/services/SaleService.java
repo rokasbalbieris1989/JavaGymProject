@@ -15,13 +15,11 @@ import java.util.List;
 public interface SaleService {
     Sale findById(int id);
 
-    Sale findBySSO(String sso);
+    void saveSale(Sale sale);
 
-    void saveUser(Sale product);
+    void updateSale(Sale sale);
 
-    void updateUser(Sale product);
+    void deleteSaleById(int id);
 
-    void deleteUserBySSO(String sso);
-
-    List<Sale> findAllUsers();
+    List<Sale> findAllSales();
 }

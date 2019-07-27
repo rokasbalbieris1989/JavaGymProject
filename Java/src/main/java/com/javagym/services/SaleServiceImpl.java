@@ -5,44 +5,55 @@
  */
 package com.javagym.services;
 
-import com.javagym.services.SaleService;
+import com.javagym.daos.SaleDao;
 import com.javagym.entities.Sale;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  *
  * @author me
  */
-public class SaleServiceImpl implements SaleService{
+@Service("saleService")
+@Transactional
+public class SaleServiceImpl implements SaleService {
+
+    @Autowired
+    private SaleDao dao;
 
     @Override
     public Sale findById(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return dao.findById(id);
     }
 
     @Override
-    public Sale findBySSO(String sso) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void saveSale(Sale sale) {
+        dao.save(sale);
     }
 
     @Override
-    public void saveUser(Sale product) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void updateSale(Sale sale) {
+        Sale entity = dao.findById(sale.getIdsales());
+		if(entity!=null){
+			entity.setDate(sale.getDate());
+			entity.setProductId(sale.getProductId());
+                        entity.setUserId(sale.getUserId());
+			entity.setQuantity(sale.getQuantity());
+			entity.setTotalPrice(sale.getTotalPrice());
+		}       
     }
 
     @Override
-    public void updateUser(Sale product) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void deleteSaleById(int id) {
+        dao.deleteById(id);
     }
 
     @Override
-    public void deleteUserBySSO(String sso) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public List<Sale> findAllSales() {
+        return dao.findAllSales();
+
     }
 
-    @Override
-    public List<Sale> findAllUsers() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
 }

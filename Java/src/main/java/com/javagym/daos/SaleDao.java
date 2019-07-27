@@ -14,12 +14,10 @@ import java.util.List;
  */
 public interface SaleDao {
     Sale findById(int id);
-	
-	Sale findBySSO(String sso);
-	
-	void save(Sale sale);
-	
-	void deleteBySSO(String sso);
-	
-	List<Sale> findAllUsers();
+
+    void save(Sale sale);
+
+    void deleteById(int id);
+
+    List<Sale> findAllSales();
 }

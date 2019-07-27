@@ -5,40 +5,49 @@
  */
 package com.javagym.daos;
 
-import com.javagym.daos.SaleDao;
-import com.javagym.daos.AbstractDao;
 import com.javagym.entities.Sale;
 import java.util.List;
+import org.hibernate.Criteria;
+import org.hibernate.Hibernate;
+import org.hibernate.criterion.Restrictions;
+import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author me
  */
+@Repository("saleDao")
 public class SaleDaoImpl extends AbstractDao<Integer, Sale> implements SaleDao{
 
     @Override
     public Sale findById(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public Sale findBySSO(String sso) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Sale sale = getByKey(id);
+        if (sale != null) {
+            Hibernate.initialize(sale.getIdsales());
+        }
+        return sale;
     }
 
     @Override
     public void save(Sale sale) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        persist(sale);
     }
 
     @Override
-    public void deleteBySSO(String sso) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void deleteById(int id) {
+        Criteria crit = createEntityCriteria();
+        crit.add(Restrictions.eq("Id", id));
+        Sale sale = (Sale) crit.uniqueResult();
+        delete(sale);
     }
 
+    @SuppressWarnings("unchecked")
     @Override
-    public List<Sale> findAllUsers() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public List<Sale> findAllSales() {
+        Criteria criteria = createEntityCriteria();
+        criteria.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);//To avoid duplicates.
+        List<Sale> sale = (List<Sale>) criteria.list();
+        return sale;
     }
     
 }
