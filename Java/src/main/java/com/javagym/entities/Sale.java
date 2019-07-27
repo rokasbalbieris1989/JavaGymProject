@@ -37,12 +37,10 @@ public class Sale implements Serializable {
     private Integer idsale;
         
     @NotEmpty
-    @ManyToOne    
     @Column(name = "userId", nullable = false)
     private Integer userId; 
     
     @NotEmpty
-    @ManyToOne
     @Column(name = "productId", nullable = false)
     private Integer productId;
       

@@ -10,11 +10,13 @@ import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.Hibernate;
 import org.hibernate.criterion.Restrictions;
+import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author me
  */
+@Repository("programDao")
 public class ProgramDaoImpl extends AbstractDao<Integer, Program> implements ProgramDao {
 
     @Override

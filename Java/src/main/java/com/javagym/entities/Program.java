@@ -42,7 +42,6 @@ public class Program implements Serializable {
     private String access;
     
     @NotEmpty
-    @ManyToOne
     @Column(name = "trainer_id", nullable = false)
     private Integer trainer_id;
     
