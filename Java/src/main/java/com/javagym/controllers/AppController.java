@@ -51,10 +51,6 @@ public class AppController {
     @Autowired
     AuthenticationTrustResolver authenticationTrustResolver;
 
-    
-
-    
-
     /**
      * This method will ...
      */
@@ -67,23 +63,13 @@ public class AppController {
         return "welcome";
     }
 
-//    /**
-//     * This method will ...
-//     */
-//    @RequestMapping(value = {"/dba"}, method = RequestMethod.GET)
-//    public String dba(ModelMap model) {
-//        User user = new User();
-//        model.addAttribute("user", user);
-//        model.addAttribute("edit", false);
-//        model.addAttribute("loggedinuser", getPrincipal());
-//        return "dba";
-//    }
     /**
      * This method will provide the medium to add a new user.
      */
     @RequestMapping(value = {"/newuser"}, method = RequestMethod.GET)
     public String newUser(ModelMap model) {
         User user = new User();
+        System.out.println("newUSER????");
         model.addAttribute("user", user);
         model.addAttribute("edit", false);
         model.addAttribute("loggedinuser", getPrincipal());
@@ -103,11 +89,26 @@ public class AppController {
 //        userProfileList.add(userProfile);
 //        user.setUserProfileList(userProfileList);
 //        userService.saveUser(user);
-
+        System.out.println("????");
+        System.out.println(user.getUserProfiles());
+//        UserProfile userProfile = new UserProfile();
+//        Set<UserProfile> userProfileSet = new HashSet();
+//        userProfileSet.add(userProfile);
+//        user.setUserProfiles(userProfileSet);
+//        System.out.println("++??");
+        System.out.println(user);
+//        System.out.println(user.getUserProfiles());
+//        UserProfile userProfile = new UserProfile();
+//        userProfile.setId(1);
+//        userProfile.setType("USER");
+//        Set<UserProfile> userProfileSet = new HashSet();
+//        userProfileSet.add(userProfile);
+//        user.setUserProfiles(userProfileSet);
+        System.out.println("has errors");
         if (result.hasErrors()) {
             return "signup";
         }
-
+        System.out.println("no errors");
         /*
 		 * Preferred way to achieve uniqueness of field [sso] should be implementing custom @Unique annotation 
 		 * and applying it on field [sso] of Model class [User].
@@ -121,21 +122,16 @@ public class AppController {
             result.addError(ssoError);
             return "signup";
         }
-        UserProfile userProfile = new UserProfile();
-        userProfile.setId(2);
-        userProfile.setType("USER");
-        Set<UserProfile> userProfileSet = new HashSet();
-        userProfileSet.add(userProfile);
-        user.setUserProfiles(userProfileSet);
+        System.out.println("not saved");
         userService.saveUser(user);
+        System.out.println("try to save");
 
         //model.addAttribute("success", "User " + user.getFirstName() + " " + user.getLastName() + " registered successfully");
         model.addAttribute("loggedinuser", getPrincipal());
         //return "success";
-        return "welcome2";
+        return "redirect:/welcome2";
     }
 
-    
 //    /**
 //     * This method will delete an user by it's SSOID value.
 //     */
@@ -144,7 +140,6 @@ public class AppController {
 //        userService.deleteUserBySSO(ssoId);
 //        return "redirect:/list";
 //    }
-
     /**
      * This method will provide UserProfile list to views
      */

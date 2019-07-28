@@ -6,8 +6,10 @@
 package com.javagym.controllers;
 
 import com.javagym.entities.Product;
+import com.javagym.entities.Program;
 import com.javagym.entities.User;
 import com.javagym.services.ProductService;
+import com.javagym.services.ProgramService;
 import java.util.List;
 import java.util.Locale;
 
@@ -44,6 +46,9 @@ public class AdminController {
     ProductService productService;
     
     @Autowired
+    ProgramService programService;
+    
+    @Autowired
     UserService userService;
 
     @Autowired
@@ -69,6 +74,8 @@ public class AdminController {
     public String admin(ModelMap model) {
         List<Product> products = productService.findAllProducts();
         model.addAttribute("products", products);
+        List<Program> programs = programService.findAllPrograms();
+        model.addAttribute("programs", programs);
         model.addAttribute("edit", true);
         model.addAttribute("loggedinuser", getPrincipal());
         return "admin";
