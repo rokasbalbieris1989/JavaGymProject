@@ -16,7 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.javagym.entities.User;
 import com.javagym.entities.UserProfile;
-import com.javagym.services.UserService;
+import com.javagym.services.user.UserService;
 
 
 @Service("customUserDetailsService")

@@ -26,8 +26,8 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.javagym.entities.User;
 import com.javagym.entities.UserProfile;
-import com.javagym.services.UserProfileService;
-import com.javagym.services.UserService;
+import com.javagym.services.userProfile.UserProfileService;
+import com.javagym.services.user.UserService;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -56,10 +56,6 @@ public class AppController {
      */
     @RequestMapping(value = {"/", "/welcome"}, method = RequestMethod.GET)
     public String welcomePage(ModelMap model) {
-//        User user = new User();
-//        model.addAttribute("user", user);
-//        model.addAttribute("edit", false);
-//        model.addAttribute("loggedinuser", getPrincipal());
         return "welcome";
     }
 
@@ -69,7 +65,6 @@ public class AppController {
     @RequestMapping(value = {"/newuser"}, method = RequestMethod.GET)
     public String newUser(ModelMap model) {
         User user = new User();
-        System.out.println("newUSER????");
         model.addAttribute("user", user);
         model.addAttribute("edit", false);
         model.addAttribute("loggedinuser", getPrincipal());
@@ -82,28 +77,8 @@ public class AppController {
      */
     @RequestMapping(value = {"/newuser"}, method = RequestMethod.POST)
     public String saveUser(@Valid User user, BindingResult result,
-            ModelMap model) {
+            ModelMap model, @PathVariable String ssoId) {
 
-//        UserProfile userProfile = new UserProfile(new Long(1), "USER");
-//        List<UserProfile> userProfileList = new ArrayList();
-//        userProfileList.add(userProfile);
-//        user.setUserProfileList(userProfileList);
-//        userService.saveUser(user);
-        System.out.println("????");
-        System.out.println(user.getUserProfiles());
-//        UserProfile userProfile = new UserProfile();
-//        Set<UserProfile> userProfileSet = new HashSet();
-//        userProfileSet.add(userProfile);
-//        user.setUserProfiles(userProfileSet);
-//        System.out.println("++??");
-        System.out.println(user);
-//        System.out.println(user.getUserProfiles());
-//        UserProfile userProfile = new UserProfile();
-//        userProfile.setId(1);
-//        userProfile.setType("USER");
-//        Set<UserProfile> userProfileSet = new HashSet();
-//        userProfileSet.add(userProfile);
-//        user.setUserProfiles(userProfileSet);
         System.out.println("has errors");
         if (result.hasErrors()) {
             return "signup";
@@ -122,10 +97,8 @@ public class AppController {
             result.addError(ssoError);
             return "signup";
         }
-        System.out.println("not saved");
         userService.saveUser(user);
-        System.out.println("try to save");
-
+        
         //model.addAttribute("success", "User " + user.getFirstName() + " " + user.getLastName() + " registered successfully");
         model.addAttribute("loggedinuser", getPrincipal());
         //return "success";
@@ -182,7 +155,7 @@ public class AppController {
             persistentTokenBasedRememberMeServices.logout(request, response, auth);
             SecurityContextHolder.getContext().setAuthentication(null);
         }
-        return "redirect:/welcome?logout";
+        return "redirect:/welcome";
     }
 
     /**

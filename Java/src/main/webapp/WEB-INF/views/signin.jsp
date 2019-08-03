@@ -10,24 +10,24 @@
 
         <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
-        <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/open-iconic-bootstrap.min.css">
-        <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/animate.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/animate.css">
+    
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/magnific-popup.css">
 
-        <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/owl.carousel.min.css">
-        <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/owl.theme.default.min.css">
-        <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/magnific-popup.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/aos.css">
 
-        <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/aos.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/ionicons.min.css">
 
-        <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/ionicons.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/jquery.timepicker.css">
 
-        <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/bootstrap-datepicker.css">
-        <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/jquery.timepicker.css">
-
-
-        <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/flaticon.css">
-        <!--<link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/icomoon.css">-->
-        <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/style.css">
+    
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/flaticon.css">
+    <!--<link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/icomoon.css">-->
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/style.css">
     </head>
     <body class="form-v7">
         <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
@@ -67,13 +67,6 @@
                 </form>
             </div>
         </div>
-
-
-
-
-
-
-
 
         <!-- loader -->
         <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>

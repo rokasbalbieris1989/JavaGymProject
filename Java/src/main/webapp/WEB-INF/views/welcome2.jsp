@@ -1,6 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -8,24 +7,16 @@
     <title>Java Gym</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/animate.css">
-    
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/owl.carousel.min.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/owl.theme.default.min.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/magnific-popup.css">
-
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/aos.css">
-
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/ionicons.min.css">
-
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/bootstrap-datepicker.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/jquery.timepicker.css">
-
-    
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/flaticon.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/icomoon.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/style.css">
@@ -40,10 +31,10 @@
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
 	          <li class="nav-item active"><a href="<c:url value="/welcome2" />" class="nav-link">Home</a></li>
-	          <li class="nav-item"><a href="classes.html" class="nav-link">Programs</a></li>
-	          <li class="nav-item"><a href="pricing.html" class="nav-link">Products</a></li>
+	          <li class="nav-item"><a href="<c:url value="welcome2/programs" />" class="nav-link">Programs</a></li>
+	          <li class="nav-item"><a href="<c:url value="welcome2/products" />" class="nav-link">Products</a></li>
             <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
-            <li class="nav-item"><a href="<c:url value="/myprofile" />" class="nav-link">My Profile</a></li>
+            <li class="nav-item"><a href="<c:url value="/myprofile-${loggedinuser}" />" class="nav-link">My Profile</a></li>
             <li class="nav-item"><a href="<c:url value="/logout" />" class="nav-link">Logout</a></li>
           </ul>
         </div>
@@ -72,65 +63,116 @@
       </div>
     </section>
 
+   <!-- Programs -->
     <section class="ftco-section">
-    	<div class="container">
-    		<div class="row justify-content-center mb-5">
-          <div class="col-md-10 heading-section text-center ftco-animate">
-          
-            <h2 class="mb-3">Pricing For Our Programs</h2>
+      <div class="container">
+          <div class="row justify-content-center mb-5">
+              <div class="col-md-10 heading-section text-center ftco-animate">
+          <h2 class="mb-3">Pricing For Our Programs</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="pricing-wrap ftco-animate img" style="background-image: url(${pageContext.request.contextPath}/static/images/program-1.jpg);">
+            <div class="title p-4" style="background-color: red;">
+              <h3>Weight Lifting</h3>
+            </div>
+            <div class="text p-4 d-flex align-items-end" style="background-color: rgba(0, 0, 0, 0.849);">
+              <a href="#" class="btn-custom px-4 py-2">Join Now</a>
+              
+              <div>
+                <span class="price">$240.00</span>
+                <h3><a href="#">Weight Lifting&nbsp;<i class="fas fa-chevron-circle-down"></i></a></h3>
+                <p style="color: white;">Far far away, behind the word mountains, far from the countries. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum dolorem error hic ex atque nesciunt distinctio, nihil voluptatum at sequi quo ducimus molestiae obcaecati nobis possimus sit itaque cupiditate aliquid.</p>
+              </div>
+            </div>
           </div>
         </div>
-    		<div class="row">
-    			<div class="col-md-4">
-    				<div class="pricing-wrap ftco-animate img" style="background-image: url(${pageContext.request.contextPath}/static/images/program-1.jpg);">
-    					<div class="title p-4">
-    						<h3>Weight Lifting</h3>
-    					</div>
-    					<div class="text p-4 d-flex align-items-end">
-    						<a href="#" class="btn-custom px-4 py-2">Enroll Now</a>
-    						<div>
-    							<span class="price">$200.00</span>
-    							<h3><a href="#">Weight Lifting</a></h3>
-    							<p>Challenge your muscles with enough weight, or you won’t stimulate the growth process.</p>
-    						</div>
-    					</div>
-    				</div>
-    			</div>
-    			<div class="col-md-4">
-    				<div class="pricing-wrap ftco-animate active img" style="background-image: url(${pageContext.request.contextPath}/static/images/gurl.jpg);">
-    					<div class="title p-4">
-    						<h3>Crossfit</h3>
-    						<span>Behind the word mountains</span>
-    					</div>
-    					<div class="text p-4 d-flex align-items-end">
-    						<a href="#" class="btn-custom px-4 py-2">Enroll Now</a>
-    						<div>
-    							<span class="price">$240.00</span>
-    							<h3><a href="#">Crossfit</a></h3>
-    							<p>CrossFit uses safe, effective and efficient movements similar to those you use every day in life.</p>
-    						</div>
-    					</div>
-    				</div>
-    			</div>
-    			<div class="col-md-4">
-    				<div class="pricing-wrap ftco-animate img" style="background-image: url(${pageContext.request.contextPath}/static/images/program-3.jpg);">
-    					<div class="title p-4">
-    						<h3>Cardio</h3>
-    					</div>
-    					<div class="text p-4 d-flex align-items-end">
-    						<a href="#" class="btn-custom px-4 py-2">Enroll Now</a>
-    						<div>
-    							<span class="price">$180.00</span>
-    							<h3><a href="#">Cardio</a></h3>
-    							<p>Cardio is an essential component of any workout, whether you want to lose weight, get fit, or just be healthier.</p>
-    						</div>
-    					</div>
-    				</div>
+        <div class="col-md-4">
+          <div class="pricing-wrap ftco-animate active img" style="background-image: url(${pageContext.request.contextPath}/static/images/gurl.jpg);">
+            <div class="title p-4" style="background-color: red;">
+              <h3>CrossFit</h3>
+            </div>
+            <div class="text p-4 d-flex align-items-end" style="background-color: rgba(0, 0, 0, 0.849);">
+              <a href="#" class="btn-custom px-4 py-2">Join Now</a>
+              
+              <div>
+                <span class="price">$240.00</span>
+                <h3><a href="#">CrossFit&nbsp;<i class="fas fa-chevron-circle-down"></i></a></h3>
+                <p style="color: white;">CrossFit takes all aspects of fitness and sports, cherry picks the best, most effective, and most applicable to everyday life, and combines them together.</p>
+              </div>
+            </div>
           </div>
-          <button type="button"  class="btn btn-primary mx-auto d-block py-3 px-4"><a id="programsBtn" href="#">More Programs</a></button>
-    		</div>
-    	</div>
-    </section>
+        </div>
+        <div class="col-md-4">
+          <div class="pricing-wrap ftco-animate img" style="background-image: url(${pageContext.request.contextPath}/static/images/cardio1.jpg);">
+            <div class="title p-4" style="background-color: red;">
+              <h3>Cardio</h3>
+            </div>
+            <div class="text p-4 d-flex align-items-end" style="background-color: rgba(0, 0, 0, 0.849);">
+              <a href="#" class="btn-custom px-4 py-2">Join Now</a>
+              
+              <div>
+                <span class="price">$240.00</span>
+                <h3><a href="#">Cardio&nbsp;<i class="fas fa-chevron-circle-down"></i></a></h3>
+                <p style="color: white;">Cardio exercise simply means that you're doing a rhythmic activity that raises your heart rate into your target heart rate zone, the zone where you'll burn the most fat and calories.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="pricing-wrap img" style="background-image: url(${pageContext.request.contextPath}/static/images/trx.jpg);">
+            <div class="title p-4" style="background-color: red;">
+              <h3>TRX</h3>
+            </div>
+            <div class="text p-4 d-flex align-items-end" style="background-color: rgba(0, 0, 0, 0.849);">
+              <a href="#" class="btn-custom px-4 py-2">Join Now</a>
+              
+              <div>
+                <span class="price">$240.00</span>
+                <h3><a href="#">TRX&nbsp;<i class="fas fa-chevron-circle-down"></i></a></h3>
+                <p style="color: white;">Far far away, behind the word mountains, far from the countries. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum dolorem error hic ex atque nesciunt distinctio, nihil voluptatum at sequi quo ducimus molestiae obcaecati nobis possimus sit itaque cupiditate aliquid.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="pricing-wrap ftco-animate img" style="background-image: url(${pageContext.request.contextPath}/static/images/pilates_1.jpg);">
+            <div class="title p-4" style="background-color: red;">
+              <h3>Pilates</h3>
+            </div>
+            <div class="text p-4 d-flex align-items-end" style="background-color: rgba(0, 0, 0, 0.849);">
+              <a href="#" class="btn-custom px-4 py-2">Join Now</a>
+              
+              <div>
+                <span class="price">$240.00</span>
+                <h3><a href="#">Pilates&nbsp;<i class="fas fa-chevron-circle-down"></i></a></h3>
+                <p style="color: white;">Far far away, behind the word mountains, far from the countries. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum dolorem error hic ex atque nesciunt distinctio, nihil voluptatum at sequi quo ducimus molestiae obcaecati nobis possimus sit itaque cupiditate aliquid.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="pricing-wrap ftco-animate img" style="background-image: url(${pageContext.request.contextPath}/static/images/yoga.jpg);">
+            <div class="title p-4" style="background-color: red;">
+              <h3>Yoga</h3>
+            </div>
+            <div class="text p-4 d-flex align-items-end" style="background-color: rgba(0, 0, 0, 0.849);">
+              <a href="#" class="btn-custom px-4 py-2">Join Now</a>
+              
+              <div>
+                <span class="price">$240.00</span>
+                <h3><a href="#">Yoga&nbsp;<i class="fas fa-chevron-circle-down"></i></a></h3>
+                <p style="color: white;">Yoga is most often associated with the physical practice of asanas, particularly stretching exercises to build flexibility and relax the body. Yoga asanas can also build strength, coordination, balance and stamina.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- end programs -->
+
 
 
     <section class="ftco-section ftco-no-pb ftco-no-pt">
@@ -516,7 +558,7 @@
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
 
-  <script src="${pageContext.request.contextPath}/static/js/jquery.min.js"></script>
+   <script src="${pageContext.request.contextPath}/static/js/jquery.min.js"></script>
   <script src="${pageContext.request.contextPath}/static/js/jquery-migrate-3.0.1.min.js"></script>
   <script src="${pageContext.request.contextPath}/static/js/popper.min.js"></script>
   <script src="${pageContext.request.contextPath}/static/js/bootstrap.min.js"></script>

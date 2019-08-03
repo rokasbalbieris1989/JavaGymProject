@@ -18,23 +18,23 @@ public class Product implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @NotEmpty
     @Column(name = "idproduct", nullable = false)
-    private Integer idproduct;
+    private int idproduct;
 
     @NotEmpty
-    @Column(name = "prices", nullable = false)
-    private Integer prices;
+    @Column(name = "price", nullable = false)
+    private Integer price;
 
     @NotEmpty
-    @Column(name = "stoc", nullable = false)
-    private Integer stoc;
+    @Column(name = "name", nullable = false)
+    private String name;
 
     @NotEmpty
-    @Column(name = "images", nullable = false)
-    private String images;
+    @Column(name = "image", nullable = false)
+    private String image;
 
     @NotEmpty
-    @Column(name = "descriptions", nullable = false)
-    private String descriptions;
+    @Column(name = "description", nullable = false)
+    private String description;
 
     @NotEmpty
     @Column(name = "category", nullable = false)
@@ -47,44 +47,44 @@ public class Product implements Serializable {
     public Product() {
     }
 
-    public Integer getIdproducts() {
+    public Integer getIdproduct() {
         return idproduct;
     }
 
-    public void setIdproducts(Integer idproduct) {
+    public void setIdproduct(Integer idproduct) {
         this.idproduct = idproduct;
     }
 
-    public Integer getPrices() {
-        return prices;
+    public Integer getPrice() {
+        return price;
     }
 
-    public void setPrices(Integer prices) {
-        this.prices = prices;
+    public void setPrice(Integer price) {
+        this.price = price;
     }
 
-    public Integer getStoc() {
-        return stoc;
+    public String getName() {
+        return name;
     }
 
-    public void setStoc(Integer stoc) {
-        this.stoc = stoc;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getImages() {
-        return images;
+    public String getImage() {
+        return image;
     }
 
-    public void setImages(String images) {
-        this.images = images;
+    public void setImage(String image) {
+        this.image = image;
     }
 
-    public String getDescriptions() {
-        return descriptions;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDescriptions(String descriptions) {
-        this.descriptions = descriptions;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getCategory() {
@@ -107,10 +107,10 @@ public class Product implements Serializable {
     public int hashCode() {
         int hash = 3;
         hash = 71 * hash + Objects.hashCode(this.idproduct);
-        hash = 71 * hash + Objects.hashCode(this.prices);
-        hash = 71 * hash + Objects.hashCode(this.stoc);
-        hash = 71 * hash + Objects.hashCode(this.images);
-        hash = 71 * hash + Objects.hashCode(this.descriptions);
+        hash = 71 * hash + Objects.hashCode(this.price);
+        hash = 71 * hash + Objects.hashCode(this.name);
+        hash = 71 * hash + Objects.hashCode(this.image);
+        hash = 71 * hash + Objects.hashCode(this.description);
         hash = 71 * hash + Objects.hashCode(this.category);
         hash = 71 * hash + Objects.hashCode(this.brand);
         return hash;
@@ -128,10 +128,10 @@ public class Product implements Serializable {
             return false;
         }
         final Product other = (Product) obj;
-        if (!Objects.equals(this.images, other.images)) {
+        if (!Objects.equals(this.image, other.image)) {
             return false;
         }
-        if (!Objects.equals(this.descriptions, other.descriptions)) {
+        if (!Objects.equals(this.description, other.description)) {
             return false;
         }
         if (!Objects.equals(this.category, other.category)) {
@@ -143,21 +143,21 @@ public class Product implements Serializable {
         if (!Objects.equals(this.idproduct, other.idproduct)) {
             return false;
         }
-        if (!Objects.equals(this.prices, other.prices)) {
+        if (!Objects.equals(this.price, other.price)) {
             return false;
         }
-        if (!Objects.equals(this.stoc, other.stoc)) {
+        if (!Objects.equals(this.name, other.name)) {
             return false;
         }
         return true;
     }
 
-    public Product(Integer idproduct, Integer prices, Integer stoc, String images, String descriptions, String category, String brand) {
+    public Product(Integer idproduct, Integer price, String name, String image, String description, String category, String brand) {
         this.idproduct = idproduct;
-        this.prices = prices;
-        this.stoc = stoc;
-        this.images = images;
-        this.descriptions = descriptions;
+        this.price = price;
+        this.name = name;
+        this.image = image;
+        this.description = description;
         this.category = category;
         this.brand = brand;
     }

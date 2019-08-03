@@ -7,7 +7,7 @@ import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 
 import com.javagym.entities.UserProfile;
-import com.javagym.services.UserProfileService;
+import com.javagym.services.userProfile.UserProfileService;
 
 /**
  * A converter class used in views to map id's to actual userProfile objects.

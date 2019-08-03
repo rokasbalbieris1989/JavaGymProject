@@ -45,7 +45,7 @@
 	          <li class="nav-item"><a href="pricing.html" class="nav-link">Products</a></li>
             <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
             <li class="nav-item"><a href="<c:url value="/myprofile" />" class="nav-link">My Profile</a></li>
-            <li class="nav-item"><a href="<c:url value="/welcome" />" class="nav-link">Log Out</a></li>
+            <li class="nav-item"><a href="<c:url value="/logout" />" class="nav-link">Log Out</a></li>
           </ul>
         </div>
         <button id = "shopBag" type="button"><a href="#" class="nav-link"><i class="fas fa-lg fa-shopping-bag"></i></a></button>      
@@ -55,7 +55,7 @@
 
 
     <section class="hero-wrap js-fullheight">
-      <div class="overlay" style="background-image: url(images/bg_2.jpg);" data-stellar-background-ratio="0.5">
+      <div class="overlay" style="background-image: url(${pageContext.request.contextPath}/static/images/bg_2.jpg);" data-stellar-background-ratio="0.5">
      
         <!-- <div class="container-fluid"> -->
         <div class="col-lg-11">
@@ -94,10 +94,10 @@
             <h2 class="mb-3">My Profile</h2>
             <div class="row">
               <div class="col-sm-4">
-                <a class="edit" href="<c:url value="/editUserProfile" />"><i class="fas fa-edit"></i>&nbsp;Edit personal info</a>
+                <a class="edit" href="<c:url value="/editUserProfile-${loggedinuser}" />"><i class="fas fa-edit"></i>&nbsp;Edit personal info</a>
               </div>
               <div class="col-sm-4">
-                  <a class="edit" href="<c:url value="/changePassword" />"><i class="fas fa-lock"></i>&nbsp;Change password</a>
+                  <a class="edit" href="<c:url value="/changePassword-${loggedinuser}" />"><i class="fas fa-lock"></i>&nbsp;Change password</a>
               </div>
             </div>
       </div>
@@ -106,10 +106,10 @@
       
       <form action="#" class="appointment-form">
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="First Name" value="Mary" disabled>
-          <input type="text" class="form-control" placeholder="Last Name" value="Johnson" disabled>
-          <input type="text" class="form-control" placeholder="Email Address" value="maryjohn@gmail.com" disabled>
-          <input type="text" class="form-control" placeholder="Phone" value="6941233691" disabled>
+          First Name:<input type="text" class="form-control"  value="${user.firstName}" disabled>
+          Last Name:<input type="text" class="form-control"  value="${user.lastName}" disabled>
+          Email:<input type="text" class="form-control"  value="${user.email}" disabled>
+          Username:<input type="text" class="form-control"  value="${user.ssoId}" disabled>
         </div>
       </form>
     </div>

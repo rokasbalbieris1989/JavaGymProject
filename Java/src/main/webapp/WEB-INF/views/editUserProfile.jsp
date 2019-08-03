@@ -1,6 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
 <!DOCTYPE html>
 <html  lang="en">
     <head>
@@ -9,26 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/animate.css">
-    
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/magnific-popup.css">
-
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/aos.css">
-
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/ionicons.min.css">
-
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/jquery.timepicker.css">
-
-    
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/flaticon.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/icomoon.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/style.css">
   </head>
   <body>
@@ -41,14 +22,14 @@
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
 	          <li class="nav-item active"><a href="<c:url value="/welcome2" />" class="nav-link">Home</a></li>
-	          <li class="nav-item"><a href="classes.html" class="nav-link">Programs</a></li>
-	          <li class="nav-item"><a href="pricing.html" class="nav-link">Products</a></li>
+	          <li class="nav-item"><a href="<c:url value="welcome2/programs" />" class="nav-link">Programs</a></li>
+	          <li class="nav-item"><a href="<c:url value="welcome2/products" />" class="nav-link">Products</a></li>
             <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
-            <li class="nav-item"><a href="<c:url value="/myprofile" />" class="nav-link">My Profile</a></li>
-            <li class="nav-item"><a href="<c:url value="/welcome" />" class="nav-link">Log Out</a></li>
+            <li class="nav-item"><a href="<c:url value="/myprofile-${loggedinuser}" />" class="nav-link">My Profile</a></li>
+            <li class="nav-item"><a href="<c:url value="/logout" />" class="nav-link">Log Out</a></li>
           </ul>
         </div>
-        <button id = "shopBag" type="button"><a href="#" class="nav-link"><i class="fas fa-lg fa-shopping-bag"></i></a></button>      
+      <button id = "shopBag" type="button"><a href="#" class="nav-link"><i class="fas fa-lg fa-shopping-bag"></i></a></button>
 		  </div>
 	  </nav>
     <!-- END nav -->
@@ -62,31 +43,35 @@
               <h2 class="p-t-100 p-b-100 p-l-60">My Orders</h2>
             </div>
             
-            <div class="table-responsive p-l-60">
-              <table class="table table-dark table-hover">
-                <thead class="thead-dark">
-                  <tr>
-                    <th>Programs/Products</th>
-                    <th>Price</th>
-                    <th>Sum</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Yoga</td>
-                    <td>$240.00</td>
-                    <td>1</td>
-                  </tr>
-                  <tr>
-                    <td>Jump Rope</td>
-                    <td>$20.00</td>
-                    <td>2</td>
-                  </tr>
-                </tbody>
+            <!-- DATA TABLE -->
+            <div class="table-responsive table-responsive-data2">
+                <table class="table table-data2 table-hover">
+                    <thead>
+                        <tr>
+                            <th id="thInbox">products/programs</th>
+                            <th class="thInbox">price</th>
+                            <th class="thInbox">quantity</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="tr-shadow">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="spacer"></tr>
+                        <tr class="tr-shadow">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="spacer"></tr>
+                    </tbody>
                 </table>
             </div>
-        </div>
       </div>
+    </div>
       
       <div class="col-lg-7 appointment ftco-animate">
           <div class="heading-section ftco-animate">
@@ -98,12 +83,15 @@
               <div class="col-sm-4">
                   <a class="edit" href="<c:url value="/changePassword" />"><i class="fas fa-lock"></i>&nbsp;Change password</a>
               </div>
+              <div class="col-sm-4">
+                <a class="edit" href="<c:url value="/userInbox" />"><i class="fas fa-envelope"></i>&nbsp;Inbox</a>
+              </div>
             </div>
       </div>
       <br>
       <br>
       
-      <form action="#" class="appointment-form" method = "POST">
+     <form action="#" class="appointment-form" method = "POST">
          
             <div class="form-group">
               <input type="text" class="form-control" placeholder="First Name">
@@ -191,20 +179,12 @@
 
   <script src="${pageContext.request.contextPath}/static/js/jquery.min.js"></script>
   <script src="${pageContext.request.contextPath}/static/js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="${pageContext.request.contextPath}/static/js/popper.min.js"></script>
   <script src="${pageContext.request.contextPath}/static/js/bootstrap.min.js"></script>
-  <script src="${pageContext.request.contextPath}/static/js/jquery.easing.1.3.js"></script>
   <script src="${pageContext.request.contextPath}/static/js/jquery.waypoints.min.js"></script>
   <script src="${pageContext.request.contextPath}/static/js/jquery.stellar.min.js"></script>
   <script src="${pageContext.request.contextPath}/static/js/owl.carousel.min.js"></script>
-  <script src="${pageContext.request.contextPath}/static/js/jquery.magnific-popup.min.js"></script>
   <script src="${pageContext.request.contextPath}/static/js/aos.js"></script>
-  <script src="${pageContext.request.contextPath}/static/js/jquery.animateNumber.min.js"></script>
-  <script src="${pageContext.request.contextPath}/static/js/bootstrap-datepicker.js"></script>
-  <script src="${pageContext.request.contextPath}/static/js/jquery.timepicker.min.js"></script>
   <script src="${pageContext.request.contextPath}/static/js/scrollax.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-  <script src="${pageContext.request.contextPath}/static/js/google-map.js"></script>
-  <script src="${pageContext.request.contextPath}/static/js/main1.js"></script>
+  <script src="${pageContext.request.contextPath}/static/js/main.js"></script>
   </body>
 </html>
