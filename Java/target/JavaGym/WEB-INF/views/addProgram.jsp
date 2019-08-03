@@ -68,7 +68,7 @@
                                 <a href="<c:url value="/admin/users/" />">Users</a>
                             </li>
                             <li>
-                                <a href="<c:url value="/admin/messages/" />">Messages</a>
+                                <a href="<c:url value="/admin/sales/" />">Sales</a>
                             </li>
                     </div>
                 </nav>
@@ -98,7 +98,7 @@
                                 <a href="<c:url value="/admin/users/" />">Users</a>
                             </li>
                             <li>
-                                <a href="<c:url value="/admin/messages/" />">Messages</a>
+                                <a href="<c:url value="/admin/sales/" />">Sales</a>
                             </li>
                         </ul>
                     </nav>

@@ -431,8 +431,8 @@
                                                             <i class="fas fa-cog"></i></i>Users</a>
                                                     </div>
                                                     <div class="account-dropdown__item">
-                                                        <a href="admin/messages/">
-                                                            <i class="fas fa-cog"></i></i>Messages</a>
+                                                        <a href="/admin/sales/">Sales</a>
+                                                        <i class="fas fa-cog"></i></i>Sales</a>
                                                     </div>
                                                     <div class="account-dropdown__item">
                                                         <a href="welcome2">
