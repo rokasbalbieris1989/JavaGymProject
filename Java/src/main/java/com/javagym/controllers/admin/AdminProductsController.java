@@ -63,7 +63,7 @@ public class AdminProductsController {
         return "addProduct";
     }
     
-    @RequestMapping(value = "/addproduct", method = RequestMethod.PUT)
+    @RequestMapping(value = "/addproduct", method = RequestMethod.POST)
     public String addProduct(@Valid Product product,BindingResult result,ModelMap model) {
         
         if (result.hasErrors()) {
@@ -73,7 +73,7 @@ public class AdminProductsController {
         
         model.addAttribute("loggedinuser", getPrincipal());
         //return "success";
-        return "redirect:/adminProducts";
+        return "redirect:/admin/products/";
     }
     
     
@@ -97,14 +97,14 @@ public class AdminProductsController {
 
 //        model.addAttribute("success", "Product with ID " + product.getIdproduct() + " updated successfully");
         model.addAttribute("loggedinuser", getPrincipal());
-        return "adminProducts";
+        return "redirect:/admin/products/";
     }
     
     
     @RequestMapping(value = {"/delete-product-{idproduct}"}, method = RequestMethod.GET)
     public String deleteProduct(@PathVariable int idproduct) {
         productService.deleteProductById(idproduct);
-        return "redirect:adminProducts";
+        return "redirect:/admin/products/";
     }
     
     

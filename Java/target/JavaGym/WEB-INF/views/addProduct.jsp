@@ -140,7 +140,7 @@
 
                             <!-- FORM -->
                             <div id="formContainer" class="container-fluid">
-                                <form:form method="PUT" modelAttribute="product" class="appointment-form horizontal-form">
+                                <form:form method="POST" modelAttribute="product" class="appointment-form horizontal-form">
                                     <form:input type="hidden" path="idproduct" id="idproduct"/>
                                     <div class="row form-group">
                                         <label class="col col-md-2 form-control-label">Product Name:</label>

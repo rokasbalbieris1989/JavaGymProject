@@ -17,78 +17,77 @@ public class Trainer implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @NotEmpty
     @Column(name = "idtrainer", nullable = false)
-    private Integer idtrainer;
+    private int idtrainer;
     
     @NotEmpty
-    @Column(name = "FirstName", nullable = false)
-    private String FirstName;
+    @Column(name = "firstName", nullable = false)
+    private String firstName;
 
 
     @NotEmpty
-    @Column(name = "LastName", nullable = false)
-    private String LastName;    
+    @Column(name = "lastName", nullable = false)
+    private String lastName;    
     
     @NotEmpty
-    @Column(name = "Email", nullable = false)
-    private String Email;
+    @Column(name = "email", nullable = false)
+    private String email;
 
     @NotEmpty
-    @Column(name = "Subject", nullable = false)
-    private String Subject;  
+    @Column(name = "subject", nullable = false)
+    private String subject;  
 
         public Trainer() {
         }
 
-        public Integer getIdtrainer() {
+        public int getIdtrainer() {
             return idtrainer;
         }
 
-        public void setIdtrainer(Integer idtrainer) {
+        public void setIdtrainer(int idtrainer) {
             this.idtrainer = idtrainer;
         }
 
         public String getFirstName() {
-            return FirstName;
+            return firstName;
         }
 
-        public void setFirstName(String FirstName) {
-            this.FirstName = FirstName;
+        public void setFirstName(String firstName) {
+            this.firstName = firstName;
         }
 
         public String getLastName() {
-            return LastName;
+            return lastName;
         }
 
-        public void setLastName(String LastName) {
-            this.LastName = LastName;
+        public void setLastName(String lastName) {
+            this.lastName = lastName;
         }
 
         public String getEmail() {
-            return Email;
+            return email;
         }
 
-        public void setEmail(String Email) {
-            this.Email = Email;
+        public void setEmail(String email) {
+            this.email = email;
         }
 
         public String getSubject() {
-            return Subject;
+            return subject;
         }
 
-        public void setSubject(String Subject) {
-            this.Subject = Subject;
+        public void setSubject(String subject) {
+            this.subject = subject;
         }
 
         @Override
         public int hashCode() {
             int hash = 3;
             hash = 59 * hash + Objects.hashCode(this.idtrainer);
-            hash = 59 * hash + Objects.hashCode(this.FirstName);
-            hash = 59 * hash + Objects.hashCode(this.LastName);
-            hash = 59 * hash + Objects.hashCode(this.Email);
-            hash = 59 * hash + Objects.hashCode(this.Subject);
+            hash = 59 * hash + Objects.hashCode(this.firstName);
+            hash = 59 * hash + Objects.hashCode(this.lastName);
+            hash = 59 * hash + Objects.hashCode(this.email);
+            hash = 59 * hash + Objects.hashCode(this.subject);
             return hash;
         }
 
@@ -104,16 +103,16 @@ public class Trainer implements Serializable {
                 return false;
             }
             final Trainer other = (Trainer) obj;
-            if (!Objects.equals(this.FirstName, other.FirstName)) {
+            if (!Objects.equals(this.firstName, other.firstName)) {
                 return false;
             }
-            if (!Objects.equals(this.LastName, other.LastName)) {
+            if (!Objects.equals(this.lastName, other.lastName)) {
                 return false;
             }
-            if (!Objects.equals(this.Email, other.Email)) {
+            if (!Objects.equals(this.email, other.email)) {
                 return false;
             }
-            if (!Objects.equals(this.Subject, other.Subject)) {
+            if (!Objects.equals(this.subject, other.subject)) {
                 return false;
             }
             if (!Objects.equals(this.idtrainer, other.idtrainer)) {
@@ -122,12 +121,12 @@ public class Trainer implements Serializable {
             return true;
         }
 
-        public Trainer(Integer idtrainer, String FirstName, String LastName, String Email, String Subject) {
+        public Trainer(Integer idtrainer, String firstName, String lastName, String email, String subject) {
             this.idtrainer = idtrainer;
-            this.FirstName = FirstName;
-            this.LastName = LastName;
-            this.Email = Email;
-            this.Subject = Subject;
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.email = email;
+            this.subject = subject;
         }
 
       

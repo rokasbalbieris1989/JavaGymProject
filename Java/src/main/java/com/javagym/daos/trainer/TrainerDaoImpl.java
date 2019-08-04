@@ -23,11 +23,7 @@ public class TrainerDaoImpl extends AbstractDao<Integer, Trainer> implements Tra
 
     @Override
     public Trainer findById(int id) {
-        Trainer trainer = getByKey(id);
-        if (trainer != null) {
-            Hibernate.initialize(trainer.getIdtrainer());
-        }
-        return trainer;
+       return getByKey(id);
     }
 
     @Override
@@ -38,12 +34,10 @@ public class TrainerDaoImpl extends AbstractDao<Integer, Trainer> implements Tra
     @SuppressWarnings("unchecked")
     @Override
     public void deleteById(int id) {
-        Criteria crit = createEntityCriteria();
-        crit.add(Restrictions.eq("Id", id));
-        Trainer trainer = (Trainer) crit.uniqueResult();
-        delete(trainer);
+        delete(findById(id));
     }
 
+    @SuppressWarnings("unchecked")
     @Override
     public List<Trainer> findAllTrainers() {
         Criteria criteria = createEntityCriteria();

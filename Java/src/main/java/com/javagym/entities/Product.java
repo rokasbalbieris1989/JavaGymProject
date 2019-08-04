@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
@@ -16,11 +17,10 @@ public class Product implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @NotEmpty
     @Column(name = "idproduct", nullable = false)
     private int idproduct;
 
-    @NotEmpty
+    @NotNull
     @Column(name = "price", nullable = false)
     private Integer price;
 
@@ -47,11 +47,11 @@ public class Product implements Serializable {
     public Product() {
     }
 
-    public Integer getIdproduct() {
+    public int getIdproduct() {
         return idproduct;
     }
 
-    public void setIdproduct(Integer idproduct) {
+    public void setIdproduct(int idproduct) {
         this.idproduct = idproduct;
     }
 

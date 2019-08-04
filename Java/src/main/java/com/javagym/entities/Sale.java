@@ -20,11 +20,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
-import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Table(name = "sale")
@@ -32,35 +31,34 @@ public class Sale implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @NotEmpty
     @Column(name = "idsale", nullable = false)
-    private Integer idsale;
+    private int idsale;
         
-    @NotEmpty
+    @NotNull
     @Column(name = "userId", nullable = false)
-    private Integer userId; 
+    private int userId; 
     
-    @NotEmpty
+    @NotNull
     @Column(name = "productId", nullable = false)
-    private Integer productId;
+    private int productId;
       
-    @NotEmpty
+    @NotNull
     @Column(name = "quantity", nullable = false)
     private Integer quantity;
      
-    @NotEmpty
+    @NotNull
     @Column(name = "date", nullable = false)
     private Integer date;
       
     
-    @NotEmpty
+    @NotNull
     @Column(name = "totalPrice", nullable = false)
     private Integer totalPrice;
 
         public Sale() {
         }
 
-        public Sale(Integer idsale, Integer userId, Integer productId, Integer quantity, Integer date, Integer totalPrice) {
+        public Sale(int idsale, int userId, int productId, Integer quantity, Integer date, Integer totalPrice) {
             this.idsale = idsale;
             this.userId = userId;
             this.productId = productId;
@@ -69,27 +67,27 @@ public class Sale implements Serializable {
             this.totalPrice = totalPrice;
         }
 
-        public Integer getIdsales() {
+        public int getIdsales() {
             return idsale;
         }
 
-        public void setIdsales(Integer idsale) {
+        public void setIdsales(int idsale) {
             this.idsale = idsale;
         }
 
-        public Integer getUserId() {
+        public int getUserId() {
             return userId;
         }
 
-        public void setUserId(Integer userId) {
+        public void setUserId(int userId) {
             this.userId = userId;
         }
 
-        public Integer getProductId() {
+        public int getProductId() {
             return productId;
         }
 
-        public void setProductId(Integer productId) {
+        public void setProductId(int productId) {
             this.productId = productId;
         }
 

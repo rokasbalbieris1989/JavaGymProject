@@ -23,11 +23,7 @@ public class SaleDaoImpl extends AbstractDao<Integer, Sale> implements SaleDao{
 
     @Override
     public Sale findById(int id) {
-        Sale sale = getByKey(id);
-        if (sale != null) {
-            Hibernate.initialize(sale.getIdsales());
-        }
-        return sale;
+        return getByKey(id);
     }
 
     @Override
@@ -37,10 +33,7 @@ public class SaleDaoImpl extends AbstractDao<Integer, Sale> implements SaleDao{
 
     @Override
     public void deleteById(int id) {
-        Criteria crit = createEntityCriteria();
-        crit.add(Restrictions.eq("Id", id));
-        Sale sale = (Sale) crit.uniqueResult();
-        delete(sale);
+        delete(findById(id));
     }
 
     @SuppressWarnings("unchecked")

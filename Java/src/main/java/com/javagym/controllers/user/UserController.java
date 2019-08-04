@@ -74,6 +74,14 @@ public class UserController {
         model.addAttribute("loggedinuser", getPrincipal());
         return "programs";
     }
+    
+    @RequestMapping(value = {"/welcome2/products"}, method = RequestMethod.GET)
+    public String products( ModelMap model) {
+        
+        model.addAttribute("edit", false);
+        model.addAttribute("loggedinuser", getPrincipal());
+        return "products";
+    }
 
     /**
      * This method will user's profile.

@@ -23,11 +23,7 @@ public class ProgramDaoImpl extends AbstractDao<Integer, Program> implements Pro
 
     @Override
     public Program findById(int id) {
-        Program program = getByKey(id);
-        if (program != null) {
-            Hibernate.initialize(program.getIdprogram());
-        }
-        return program;
+        return getByKey(id);
     }
 
     @Override
@@ -37,10 +33,7 @@ public class ProgramDaoImpl extends AbstractDao<Integer, Program> implements Pro
 
     @Override
     public void deleteById(int id) {
-        Criteria crit = createEntityCriteria();
-        crit.add(Restrictions.eq("Id", id));
-        Program program = (Program) crit.uniqueResult();
-        delete(program);
+        delete(findById(id));
     }
 
     @SuppressWarnings("unchecked")

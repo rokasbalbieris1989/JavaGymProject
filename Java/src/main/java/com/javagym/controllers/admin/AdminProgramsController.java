@@ -63,7 +63,7 @@ public class AdminProgramsController {
         return "addProgram";
     }
     
-    @RequestMapping(value = "/addprogram", method = RequestMethod.PUT)
+    @RequestMapping(value = "/addprogram", method = RequestMethod.POST)
     public String addProgram(@Valid Program program,BindingResult result,ModelMap model) {
         
         if (result.hasErrors()) {
@@ -73,7 +73,7 @@ public class AdminProgramsController {
         
         model.addAttribute("loggedinuser", getPrincipal());
         //return "success";
-        return "redirect:/adminPrograms";
+        return "redirect:/admin/programs/";
     }
     
     
@@ -97,14 +97,14 @@ public class AdminProgramsController {
 
 //        model.addAttribute("success", "Product with ID " + product.getIdproduct() + " updated successfully");
         model.addAttribute("loggedinuser", getPrincipal());
-        return "adminPrograms";
+        return "\"redirect:/admin/programs/";
     }
     
     
     @RequestMapping(value = {"/delete-program-{idprogram}"}, method = RequestMethod.GET)
     public String deleteProgram(@PathVariable int idprogram) {
         programService.deleteProgramById(idprogram);
-        return "redirect:adminPrograms";
+        return "redirect:/admin/programs/";
     }
     
     /**

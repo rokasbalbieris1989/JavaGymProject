@@ -164,12 +164,7 @@
                                 <table class="table table-data2 table-hover">
                                     <thead id="thHead">
                                         <tr>
-                                            <th>
-                                                <label class="au-checkbox">
-                                                    <input type="checkbox">
-                                                    <span class="au-checkmark"></span>
-                                                </label>
-                                            </th>
+                                            
                                             <th class="thInbox">name</th>
                                             <th class="thInbox">description</th>
                                             <th class="thInbox">access</th>
@@ -181,16 +176,11 @@
                                     <tbody class="table-hover">
                                         <c:forEach items="${programs}" var="program">
                                             <tr class="tr-shadow">
-                                                <td>
-                                                    <label class="au-checkbox">
-                                                        <input type="checkbox">
-                                                        <span class="au-checkmark"></span>
-                                                    </label>
-                                                </td>
+                                                
                                                 <td>${program.sports}</td>
                                                 <td>${program.description}</td>
                                                 <td>${program.access}</td>
-                                                <td>${program.traainer_id}</td>
+                                                <td>${program.trainer_id}</td>
                                                 <td>${program.prices}</td>
 
                                                 <td>

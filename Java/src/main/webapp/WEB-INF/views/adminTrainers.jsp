@@ -164,12 +164,7 @@
                                 <table class="table table-data2 table-hover">
                                     <thead id="thHead">
                                         <tr>
-                                            <th>
-                                                <label class="au-checkbox">
-                                                    <input type="checkbox">
-                                                    <span class="au-checkmark"></span>
-                                                </label>
-                                            </th>
+                                           
                                             <th class="thInbox">first name</th>
                                             <th class="thInbox">last name</th>
                                             <th class="thInbox">email</th>
@@ -180,16 +175,11 @@
                                     <tbody class="table-hover">
                                         <c:forEach items="${trainers}" var="trainer">
                                             <tr class="tr-shadow">
-                                                <td>
-                                                    <label class="au-checkbox">
-                                                        <input type="checkbox">
-                                                        <span class="au-checkmark"></span>
-                                                    </label>
-                                                </td>
-                                                <td>${trainer.FirstName}</td>
-                                                <td>${trainer.LastName}</td>
-                                                <td>${trainer.Email}</td>
-                                                <td>${trainer.Subject}</td>
+                                               
+                                                <td>${trainer.firstName}</td>
+                                                <td>${trainer.lastName}</td>
+                                                <td>${trainer.email}</td>
+                                                <td>${trainer.subject}</td>
 
                                                 <td>
                                                     <div class="table-data-feature">

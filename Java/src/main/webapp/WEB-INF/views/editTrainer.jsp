@@ -146,7 +146,7 @@
                                     <div class="row form-group">
                                         <label class="col col-md-2 form-control-label">First Name:</label>
                                         <div class="col-12 col-md-10">
-                                            <form:input type="text" class="form-control" path="FirstName" id="FirstName" />
+                                            <form:input type="text" class="form-control" path="firstName" id="firstName" />
                                         </div>
                                     </div>
                                     <div class="row form-group">
@@ -154,19 +154,19 @@
                                             <label class=" form-control-label">Last Name</label>
                                         </div>
                                         <div class="col-12 col-md-10">
-                                            <form:input type="text" class="form-control" path="LastName" id="LastName" />
+                                            <form:input type="text" class="form-control" path="lastName" id="lastName" />
                                         </div>
                                     </div>
                                     <div class=" row form-group">
                                         <label class="col col-md-2 form-control-label">Email:</label>
                                         <div class="col-12 col-md-10">
-                                            <form:input type="text" class="form-control" path="Email" id="Email" />
+                                            <form:input type="text" class="form-control" path="email" id="email" />
                                         </div>
                                     </div>
                                     <div class="row form-group">
                                         <label class="col col-md-2 form-control-label">Subject</label>
                                         <div class="col-12 col-md-10">
-                                            <form:input type="text" path="Subject" id="Subject" class="form-control" />
+                                            <form:input type="text" path="subject" id="subject" class="form-control" />
                                         </div>
                                     </div>
                                      <div id="btnsForm" class="form-group pull-right">

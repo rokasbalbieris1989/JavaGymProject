@@ -618,20 +618,7 @@
                                                     <th class="text-right">Delete</th>
                                                 </tr>
                                             </thead>
-                                            <tbody>
-                                                <c:forEach items="${products}" var="product">
-                                                    <tr>
-                                                        <td>${product.idproduct}</td>
-                                                        <td>${product.description}</td>
-                                                        <td>${product.price}</td>
-                                                        <td>${product.name}</td>
-                                                        <td>${product.image}</td>
-                                                        <td><a href="<c:url value='/edit-product-{${product.idproduct}}' />" class="btn btn-success custom-width">edit</a></td>
-                                                        <td><a href="<c:url value='/delete-product-{${product.idproduct}}' />" class="btn btn-danger custom-width">delete</a></td>
-
-                                                    </tr>
-                                                </c:forEach>                                 
-                                            </tbody>
+                                            
                                         </table>                                  
                                     </div>  
                                     <div class="well">
@@ -649,30 +636,10 @@
                                                         <th>sports</th>
                                                         <th>prices</th>
                                                         <th>access</th>
-                                                            <sec:authorize access="hasRole('ADMIN')">
-                                                            <th width="100"></th>
-                                                            </sec:authorize>
-                                                            <sec:authorize access="hasRole('ADMIN')">
-                                                            <th width="100"></th>
-                                                            </sec:authorize>
+                                                           
                                                     </tr>
                                                 </thead>
-                                                <tbody>
-                                                    <c:forEach items="${programs}" var="program">
-                                                        <tr>
-                                                            <td>${program.idprogram}</td>
-                                                            <td>${program.sports}</td>
-                                                            <td>${program.prices}</td>
-                                                            <td>${program.access}</td>
-                                                            <sec:authorize access="hasRole('ADMIN')">
-                                                                <td><a href="<c:url value='/edit-product-${program.idprogram}' />" class="btn btn-success custom-width">edit</a></td>
-                                                            </sec:authorize>
-                                                            <sec:authorize access="hasRole('ADMIN')">
-                                                                <td><a href="<c:url value='/delete-product-${program.idprogram}' />" class="btn btn-danger custom-width">delete</a></td>
-                                                            </sec:authorize>
-                                                        </tr>
-                                                    </c:forEach>                                 
-                                                </tbody>
+                                               
                                             </table>                                  
                                         </div>  
                                         <div class="well">
@@ -697,23 +664,7 @@
                                                             <th>Delete</th>
                                                         </tr>
                                                     </thead>
-                                                    <tbody>
-                                                        <c:forEach items="${users}" var="user">
-                                                            <tr>
-                                                                <td>${user.id}</td>
-                                                                <td>${user.firstName}</td>
-                                                                <td>${user.lastName}</td>
-                                                                <td>${user.ssoId}</td>
-                                                                <td>${user.email}</td>
-                                                                <sec:authorize access="hasRole('ADMIN')">
-                                                                    <td><a href="edit-user-${user.ssoId}" class="btn btn-success custom-width">edit</a></td>
-                                                                </sec:authorize>
-                                                                <sec:authorize access="hasRole('ADMIN')">
-                                                                    <td><a href="delete-user-${user.ssoId}" class="btn btn-danger custom-width">delete</a></td>
-                                                                </sec:authorize>
-                                                            </tr>
-                                                        </c:forEach>                                 
-                                                    </tbody>
+                                                   
                                                 </table>                                  
                                             </div>  
                                             <div class="well">
@@ -1049,7 +1000,7 @@
                 </script>
 
                 <!-- Main JS-->
-                <script src="${pageContext.request.contextPath}/static/js/main.js"></script>
+                <script src="${pageContext.request.contextPath}/static/js/main2.js"></script>
 
                 </body>
 

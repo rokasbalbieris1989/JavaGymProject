@@ -33,10 +33,6 @@ public class ProductDaoImpl extends AbstractDao<Integer, Product> implements Pro
 
     @Override
     public void deleteById(int id) {
-//        Criteria crit = createEntityCriteria();
-//        crit.add(Restrictions.eq("Id", id));
-//        Product product = (Product) crit.uniqueResult();
-//        delete(product);
         delete(findById(id));
     }
     

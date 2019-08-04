@@ -52,6 +52,154 @@ ul {
     margin: 0;
 }
 
+.headerLinks {
+  float: left;  
+}
+
+.headerLinks a {
+  color: white;
+  font-size: 14px;
+  display: block;
+  margin-right: 30px;
+}
+
+.headerLinks a:hover {
+  color: red;
+}
+
+
+#modalForm, #modalForm2 {
+  color: gray;
+}
+
+#largeModalLabel, #largeModalLabel2{
+  color: black;
+}
+
+#thHead {
+  background-color: #000000a1;
+}
+
+.table-hover tbody tr {
+  background-color: #fff;
+}
+
+.table-hover tbody tr:hover {
+  background-color: rgba(158, 158, 158, 0.568);
+}
+
+.thInbox {
+  color: white!important;
+}
+
+#addBtn, #editBtn {
+  color: white;
+  background-color: red;
+}
+
+#addBtn:hover{
+  background-color: black;
+}
+
+
+
+
+/* carousel */
+.carousel-indicators li {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+}
+.carousel-indicators {
+  bottom: -100px;
+}
+
+
+/* modal delete */
+.modal-confirm {		
+  color: #636363;
+  width: 400px;
+}
+.modal-confirm .modal-content {
+  padding: 20px;
+  border-radius: 5px;
+  border: none;
+      text-align: center;
+  font-size: 14px;
+}
+.modal-confirm .modal-header {
+  border-bottom: none;   
+      position: relative;
+}
+.modal-confirm h4 {
+  text-align: center;
+  font-size: 26px;
+  margin: 30px 0 -10px;
+}
+.modal-confirm .close {
+      position: absolute;
+  top: -5px;
+  right: -2px;
+}
+.modal-confirm .modal-body {
+  color: #999;
+}
+.modal-confirm .modal-footer {
+  border: none;
+  text-align: center;		
+  border-radius: 5px;
+  font-size: 13px;
+  padding: 10px 15px 25px;
+}
+.modal-confirm .modal-footer a {
+  color: #999;
+}		
+.modal-confirm .icon-box {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+  border-radius: 50%;
+  z-index: 9;
+  text-align: center;
+  border: 3px solid #f15e5e;
+}
+.modal-confirm .icon-box i {
+  color: #f15e5e;
+  font-size: 46px;
+  display: inline-block;
+  margin-top: 13px;
+}
+  .modal-confirm .btn {
+      color: #fff;
+      border-radius: 4px;
+  background: #60c7c1;
+  text-decoration: none;
+  transition: all 0.4s;
+      line-height: normal;
+  min-width: 120px;
+      border: none;
+  min-height: 40px;
+  border-radius: 3px;
+  margin: 0 5px;
+  outline: none !important;
+  }
+.modal-confirm .btn-info {
+      background: #ff0000;
+  }
+  .modal-confirm .btn-info:hover, .modal-confirm .btn-info:focus {
+      background: #333333;
+  }
+  .modal-confirm .btn-danger {
+      background: #ff0000;
+  }
+  .modal-confirm .btn-danger:hover, .modal-confirm .btn-danger:focus {
+      background: #ff0000;
+  }
+.trigger-btn {
+  display: inline-block;
+  margin: 100px auto;
+}
+
 button,
 input[type='button'] {
     cursor: pointer;
@@ -61,7 +209,9 @@ button:focus,
 input:focus,
 textarea:focus {
     outline: none;
+    
 }
+
 
 input, textarea {
     border: none;
@@ -103,7 +253,7 @@ body {
     font-weight: 400;
     font-size: 16px;
     line-height: 1.625;
-    color: #666;
+    color: black;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -114,7 +264,7 @@ h3,
 h4,
 h5,
 h6 {
-    color: black;
+    color:white;
     font-weight: 700;
     margin: 0;
     line-height: 1.2;
@@ -252,6 +402,7 @@ section {
 
 .section__content--p30 {
     padding: 0 30px;
+   
 }
 
 @media (max-width: 991px) {
@@ -278,8 +429,11 @@ section {
 }
 
 .page-container {
-    background: #e5e5e5;
+    background: black;
     padding-left: 300px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; 
 }
 
 @media (max-width: 991px) {
@@ -309,7 +463,7 @@ section {
 .main-content {
     padding-top: 116px;
     min-height: 100vh;
-}
+ }
 
 @media (max-width: 991px) {
     .main-content {
@@ -475,6 +629,21 @@ section {
 
 .au-btn--blue {
     background: red;
+    color: white;
+}
+
+.au-btn--blue a {
+  color: white;
+}
+
+.au-btn--blue a:hover {
+  color: red;
+}
+
+.au-btn--blue:hover {
+  background: transparent;
+  border: 3px solid red;
+  color: red;
 }
 
 .au-btn--green {
@@ -585,6 +754,15 @@ section {
     -o-animation: spinner 1000ms infinite linear;
     animation: spinner 1000ms infinite linear;
     z-index: 100000;
+}
+
+#formContainer {
+  color: white;
+  background-color: rgba(2, 2, 2, 0.822);
+}
+
+#btnsForm {
+  float: right;
 }
 
 @-webkit-keyframes spinner {
@@ -1123,7 +1301,7 @@ section {
     top: -1px;
     width: 9px;
     height: 15px;
-    border: solid #00ad5f;
+    border: solid red;
     border-width: 0 4px 4px 0;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
@@ -1139,6 +1317,7 @@ section {
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     border-radius: 2px;
+    
 }
 
 .card {
@@ -1612,6 +1791,7 @@ section {
     height: -webkit-calc(100vh - 75px);
     height: -moz-calc(100vh - 75px);
     height: calc(100vh - 75px);
+    border-right: 1px solid #e5e5e5;
 }
 
 .navbar-sidebar {
@@ -1916,7 +2096,7 @@ section {
 }
 
 .mess__footer a:hover, .email__footer a:hover, .notifi__footer a:hover {
-    color: #3868cd;
+    color: #ff0000;
 }
 
 .mess-dropdown {
@@ -2131,7 +2311,7 @@ section {
     -moz-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    background: #365cad;
+    background: black;
     padding: 0 35px;
 }
 
@@ -3207,7 +3387,7 @@ section {
 
 .overview-box .text span {
     font-size: 18px;
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(12, 12, 12, 0.705);
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
@@ -3550,7 +3730,7 @@ section {
 
 .au-message__item-time span {
     font-size: 14px;
-    color: #808080;
+    color: #050505;
 }
 
 .au-message__item-text .text {
@@ -4347,7 +4527,7 @@ section {
 .table-data thead tr td {
     font-size: 12px;
     font-weight: 600;
-    color: #808080;
+    color: #ffffff;
     text-transform: uppercase;
 }
 
@@ -4374,14 +4554,14 @@ section {
 
 .table-data__info h6 {
     font-size: 14px;
-    color: #808080;
+    color: #181818;
     text-transform: capitalize;
     font-weight: 400;
 }
 
 .table-data__info span a {
     font-size: 12px;
-    color: #999;
+    color: rgb(20, 20, 20);
 }
 
 .table-data__info span a:hover {
@@ -4618,7 +4798,7 @@ section {
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
     border-radius: 100%;
-    background: #e5e5e5;
+    background: #ffffff;
     margin-right: 5px;
 }
 
@@ -4628,7 +4808,7 @@ section {
 
 .table-data-feature .item i {
     font-size: 20px;
-    color: #808080;
+    color: black;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -4637,6 +4817,10 @@ section {
     -ms-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+}
+
+.table-data-feature .item i:hover{
+  color: red;
 }
 
 .block-email {

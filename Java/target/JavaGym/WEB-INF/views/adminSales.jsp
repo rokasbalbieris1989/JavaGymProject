@@ -143,12 +143,7 @@
                                 <table class="table table-data2 table-hover">
                                     <thead id="thHead">
                                         <tr>
-                                            <th>
-                                                <label class="au-checkbox">
-                                                    <input type="checkbox">
-                                                    <span class="au-checkmark"></span>
-                                                </label>
-                                            </th>
+                                            
                                             <th class="thInbox">ID</th>
                                             <th class="thInbox">User</th>
                                             <th class="thInbox">Product</th>
@@ -162,12 +157,7 @@
                                     <tbody class="table-hover">
                                         <c:forEach items="${sales}" var="sale">
                                             <tr class="tr-shadow">
-                                                <td>
-                                                    <label class="au-checkbox">
-                                                        <input type="checkbox">
-                                                        <span class="au-checkmark"></span>
-                                                    </label>
-                                                </td>
+                                                
                                                 <td>${sale.idsale}</td>
                                                 <td>${sale.userId}</td>
                                                 <td>${sale.productId}</td>
