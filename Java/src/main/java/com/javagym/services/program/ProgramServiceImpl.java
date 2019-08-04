@@ -43,7 +43,6 @@ public class ProgramServiceImpl implements ProgramService{
 			entity.setImages(program.getImages());
 			entity.setPrices(program.getPrices());
 			entity.setCategory(program.getCategory());
-                        entity.setBrand(program.getBrand());
 			entity.setSports(program.getSports());
 			entity.setDescription(program.getDescription());
 			entity.setTrainer_id(program.getTrainer_id());

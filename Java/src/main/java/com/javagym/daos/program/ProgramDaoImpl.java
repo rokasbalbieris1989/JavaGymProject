@@ -6,7 +6,6 @@
 package com.javagym.daos.program;
 
 import com.javagym.daos.AbstractDao;
-import com.javagym.daos.program.ProgramDao;
 import com.javagym.entities.Program;
 import java.util.List;
 import org.hibernate.Criteria;
