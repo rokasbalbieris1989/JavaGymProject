@@ -67,34 +67,32 @@ public class UserController {
         return "welcome2";
     }
     
-    @RequestMapping(value = {"/welcome2/programs"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"/commerce"}, method = RequestMethod.GET)
     public String programs( ModelMap model) {
         
-        model.addAttribute("edit", false);
         model.addAttribute("loggedinuser", getPrincipal());
-        return "programs";
+        return "commerce";
     }
     
-    @RequestMapping(value = {"/welcome2/products"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"/commerce#products"}, method = RequestMethod.GET)
     public String products( ModelMap model) {
         
-        model.addAttribute("edit", false);
         model.addAttribute("loggedinuser", getPrincipal());
-        return "products";
+        return "commerce";
     }
 
     /**
      * This method will user's profile.
      */
     @RequestMapping(value = {"/myprofile-{ssoId}"}, method = RequestMethod.GET)
-    public String myProfile(@PathVariable String ssoId, ModelMap model) {
-
-        User user = userService.findBySSO(ssoId);
-        System.out.println(ssoId);
-        System.out.println(user);
-        model.addAttribute("user", user);
+    public String myProfile(ModelMap model) {
         model.addAttribute("loggedinuser", getPrincipal());
-        System.out.println(getPrincipal());
+        if (isCurrentAuthenticationAnonymous()) {
+            return "accessDenied";
+        }
+        String ssoId = getPrincipal();
+        User user = userService.findBySSO(ssoId);
+        model.addAttribute("user", user);
         return "userProfile";
     }
 
@@ -102,11 +100,14 @@ public class UserController {
      * This method will view user's profile.
      */
     @RequestMapping(value = {"/editUserProfile-{ssoId}"}, method = RequestMethod.GET)
-    public String editUserProfile(@PathVariable String ssoId, ModelMap model) {
-
+    public String editUserProfile(ModelMap model) {
+        model.addAttribute("loggedinuser", getPrincipal());
+        if (isCurrentAuthenticationAnonymous()) {
+            return "accessDenied";
+        }
+        String ssoId = getPrincipal();
         User user = userService.findBySSO(ssoId);
         model.addAttribute("user", user);
-        model.addAttribute("loggedinuser", getPrincipal());
         return "editUserProfile";
     }
 
@@ -129,59 +130,59 @@ public class UserController {
         }
         userService.updateUser(user);
 
-        model.addAttribute("success", "User " + user.getFirstName() + " " + user.getLastName() + " updated successfully");
+//        model.addAttribute("success", "User " + user.getFirstName() + " " + user.getLastName() + " updated successfully");
         model.addAttribute("loggedinuser", getPrincipal());
         return "userProfile";
     }
 
-    /**
-     * This method will user's profile.
-     */
-    @RequestMapping(value = {"/changePassword-{ssoId}"}, method = RequestMethod.GET)
-    public String changePassword(@PathVariable String ssoId, ModelMap model) {
+//    /**
+//     * This method will user's profile.
+//     */
+//    @RequestMapping(value = {"/changePassword-{ssoId}"}, method = RequestMethod.GET)
+//    public String changePassword(@PathVariable String ssoId, ModelMap model) {
+//
+//        User user = userService.findBySSO(ssoId);
+//        model.addAttribute("user", user);
+//        model.addAttribute("loggedinuser", getPrincipal());
+//        return "changePassword";
+//    }
 
-        User user = userService.findBySSO(ssoId);
-        model.addAttribute("user", user);
-        model.addAttribute("loggedinuser", getPrincipal());
-        return "changePassword";
-    }
-
-    /**
-     * This method will provide the medium to update an existing user.
-     */
-    @RequestMapping(value = {"/edit-user-{ssoId}"}, method = RequestMethod.GET)
-    public String editUser(@PathVariable String ssoId, ModelMap model) {
-        User user = userService.findBySSO(ssoId);
-        model.addAttribute("user", user);
-        model.addAttribute("edit", true);
-        model.addAttribute("loggedinuser", getPrincipal());
-        return "registration";
-    }
-
-    /**
-     * This method will be called on form submission, handling POST request for
-     * updating user in database. It also validates the user input
-     */
-    @RequestMapping(value = {"/edit-user-{ssoId}"}, method = RequestMethod.POST)
-    public String updateUser(@Valid User user, BindingResult result,
-            ModelMap model, @PathVariable String ssoId) {
-
-        if (result.hasErrors()) {
-            return "registration";
-        }
-
-        /*//Uncomment below 'if block' if you WANT TO ALLOW UPDATING SSO_ID in UI which is a unique key to a User.
-		if(!userService.isUserSSOUnique(user.getId(), user.getSsoId())){
-			FieldError ssoError =new FieldError("user","ssoId",messageSource.getMessage("non.unique.ssoId", new String[]{user.getSsoId()}, Locale.getDefault()));
-		    result.addError(ssoError);
-			return "registration";
-		}*/
-        userService.updateUser(user);
-
-        model.addAttribute("success", "User " + user.getFirstName() + " " + user.getLastName() + " updated successfully");
-        model.addAttribute("loggedinuser", getPrincipal());
-        return "registrationsuccess";
-    }
+//    /**
+//     * This method will provide the medium to update an existing user.
+//     */
+//    @RequestMapping(value = {"/edit-user-{ssoId}"}, method = RequestMethod.GET)
+//    public String editUser(@PathVariable String ssoId, ModelMap model) {
+//        User user = userService.findBySSO(ssoId);
+//        model.addAttribute("user", user);
+//        model.addAttribute("edit", true);
+//        model.addAttribute("loggedinuser", getPrincipal());
+//        return "registration";
+//    }
+//
+//    /**
+//     * This method will be called on form submission, handling POST request for
+//     * updating user in database. It also validates the user input
+//     */
+//    @RequestMapping(value = {"/edit-user-{ssoId}"}, method = RequestMethod.POST)
+//    public String updateUser(@Valid User user, BindingResult result,
+//            ModelMap model, @PathVariable String ssoId) {
+//
+//        if (result.hasErrors()) {
+//            return "registration";
+//        }
+//
+//        /*//Uncomment below 'if block' if you WANT TO ALLOW UPDATING SSO_ID in UI which is a unique key to a User.
+//		if(!userService.isUserSSOUnique(user.getId(), user.getSsoId())){
+//			FieldError ssoError =new FieldError("user","ssoId",messageSource.getMessage("non.unique.ssoId", new String[]{user.getSsoId()}, Locale.getDefault()));
+//		    result.addError(ssoError);
+//			return "registration";
+//		}*/
+//        userService.updateUser(user);
+//
+//        model.addAttribute("success", "User " + user.getFirstName() + " " + user.getLastName() + " updated successfully");
+//        model.addAttribute("loggedinuser", getPrincipal());
+//        return "registrationsuccess";
+//    }
 
     /**
      * This method will provide UserProfile list to views

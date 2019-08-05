@@ -152,7 +152,7 @@
                                     <div class="overview-wrap">
                                         <h2 class="title-1">Programs</h2>
                                         <button class="au-btn au-btn-icon au-btn--blue">
-                                            <i class="fas fa-plus"></i><a href="<c:url value="/admin/programs/addProgram" />">add program</a></button>
+                                            <i class="fas fa-plus"></i><a href="<c:url value="/admin/programs/addprogram" />">add program</a></button>
                                     </div>
                                 </div>
                             </div>

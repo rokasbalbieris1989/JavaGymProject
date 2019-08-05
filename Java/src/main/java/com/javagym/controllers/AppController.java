@@ -59,6 +59,13 @@ public class AppController {
         return "welcome";
     }
 
+    
+//     @RequestMapping(value = {"/commerce#products"}, method = RequestMethod.GET)
+//    public String commerce(ModelMap model) {
+//       
+//        model.addAttribute("loggedinuser", getPrincipal());
+//        return "commerce";
+//    }
     /**
      * This method will provide the medium to add a new user.
      */
@@ -77,13 +84,12 @@ public class AppController {
      */
     @RequestMapping(value = {"/newuser"}, method = RequestMethod.POST)
     public String saveUser(@Valid User user, BindingResult result,
-            ModelMap model, @PathVariable String ssoId) {
+            ModelMap model) {
 
         System.out.println("has errors");
         if (result.hasErrors()) {
             return "signup";
         }
-        System.out.println("no errors");
         /*
 		 * Preferred way to achieve uniqueness of field [sso] should be implementing custom @Unique annotation 
 		 * and applying it on field [sso] of Model class [User].

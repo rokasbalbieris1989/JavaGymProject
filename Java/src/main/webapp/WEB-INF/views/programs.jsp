@@ -21,8 +21,8 @@
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
 	          <li class="nav-item"><a href="<c:url value="/welcome2" />" class="nav-link">Home</a></li>
-	          <li class="nav-item active"><a href="<c:url value="welcome2/programs" />" class="nav-link">Programs</a></li>
-	          <li class="nav-item"><a href="<c:url value="welcome2/products" />" class="nav-link">Products</a></li>
+	          <li class="nav-item active"><a href="<c:url value="/welcome2/programs" />" class="nav-link">Programs</a></li>
+	          <li class="nav-item"><a href="<c:url value="/welcome2/products" />" class="nav-link">Products</a></li>
             <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
             <li class="nav-item dropdown"><a href="<c:url value="/myprofile-${loggedinuser}" />" class="nav-link dropbtn"><i class="fas fa-user"></i>&nbsp;Username&nbsp;<i class="fas fa-sort-down"></i></a>
               <div class="dropdown-content">

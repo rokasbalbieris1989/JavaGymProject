@@ -62,7 +62,7 @@ public class AdminTrainerController {
         return "addTrainer";
     }
     
-    @RequestMapping(value = "/addtrainer", method = RequestMethod.PUT)
+    @RequestMapping(value = "/addtrainer", method = RequestMethod.POST)
     public String addTrainer(@Valid Trainer trainer,BindingResult result,ModelMap model) {
         
         if (result.hasErrors()) {
@@ -72,7 +72,7 @@ public class AdminTrainerController {
         
         model.addAttribute("loggedinuser", getPrincipal());
         //return "success";
-        return "redirect:/adminTrainers";
+        return "redirect:/admin/trainers/";
     }
     
     
@@ -101,9 +101,9 @@ public class AdminTrainerController {
     
     
     @RequestMapping(value = {"/delete-trainer-{idtrainer}"}, method = RequestMethod.GET)
-    public String deleteTrainer(@PathVariable int idprogram) {
-        trainerService.deleteTrainerById(idprogram);
-        return "redirect:adminTrainers";
+    public String deleteTrainer(@PathVariable int idtrainer) {
+        trainerService.deleteTrainerById(idtrainer);
+        return "redirect:/admin/trainers/";
     }
     /**
      * This method returns the principal[user-name] of logged-in user.

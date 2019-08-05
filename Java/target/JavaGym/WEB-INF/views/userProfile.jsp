@@ -41,10 +41,10 @@
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
 	          <li class="nav-item active"><a href="<c:url value="/welcome2" />" class="nav-link">Home</a></li>
-	          <li class="nav-item"><a href="classes.html" class="nav-link">Programs</a></li>
-	          <li class="nav-item"><a href="pricing.html" class="nav-link">Products</a></li>
+	          <li class="nav-item"><a href="<c:url value="/welcome2/programs" />" class="nav-link">Programs</a></li>
+	          <li class="nav-item"><a href="<c:url value="/welcome2/products" />" class="nav-link">Products</a></li>
             <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
-            <li class="nav-item"><a href="<c:url value="/myprofile" />" class="nav-link">My Profile</a></li>
+            <li class="nav-item"><a href="<c:url value="/myprofile-${loggedinuser}" />" class="nav-link">My Profile</a></li>
             <li class="nav-item"><a href="<c:url value="/logout" />" class="nav-link">Log Out</a></li>
           </ul>
         </div>
@@ -96,15 +96,15 @@
               <div class="col-sm-4">
                 <a class="edit" href="<c:url value="/editUserProfile-${loggedinuser}" />"><i class="fas fa-edit"></i>&nbsp;Edit personal info</a>
               </div>
-              <div class="col-sm-4">
+<!--              <div class="col-sm-4">
                   <a class="edit" href="<c:url value="/changePassword-${loggedinuser}" />"><i class="fas fa-lock"></i>&nbsp;Change password</a>
-              </div>
+              </div>-->
             </div>
       </div>
       <br>
       <br>
       
-      <form action="#" class="appointment-form">
+      <form class="appointment-form">
         <div class="form-group">
           First Name:<input type="text" class="form-control"  value="${user.firstName}" disabled>
           Last Name:<input type="text" class="form-control"  value="${user.lastName}" disabled>

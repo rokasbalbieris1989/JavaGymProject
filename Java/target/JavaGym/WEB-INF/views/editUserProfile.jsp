@@ -1,5 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
 <!DOCTYPE html>
 <html  lang="en">
     <head>
@@ -22,8 +24,8 @@
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
 	          <li class="nav-item active"><a href="<c:url value="/welcome2" />" class="nav-link">Home</a></li>
-	          <li class="nav-item"><a href="<c:url value="welcome2/programs" />" class="nav-link">Programs</a></li>
-	          <li class="nav-item"><a href="<c:url value="welcome2/products" />" class="nav-link">Products</a></li>
+	          <li class="nav-item"><a href="<c:url value="/welcome2/programs" />" class="nav-link">Programs</a></li>
+	          <li class="nav-item"><a href="<c:url value="/welcome2/products" />" class="nav-link">Products</a></li>
             <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
             <li class="nav-item"><a href="<c:url value="/myprofile-${loggedinuser}" />" class="nav-link">My Profile</a></li>
             <li class="nav-item"><a href="<c:url value="/logout" />" class="nav-link">Log Out</a></li>
@@ -78,32 +80,33 @@
             <h2 class="mb-3">Edit My Profile</h2>
             <div class="row">
               <div class="col-sm-4">
-                <a class="edit" href="<c:url value="/editUserProfile" />"><i class="fas fa-edit"></i>&nbsp;Edit personal info</a>
+                <a class="edit" href="<c:url value="/editUserProfile-${loggedinuser}" />"><i class="fas fa-edit"></i>&nbsp;Edit personal info</a>
               </div>
               <div class="col-sm-4">
-                  <a class="edit" href="<c:url value="/changePassword" />"><i class="fas fa-lock"></i>&nbsp;Change password</a>
+                  <a class="edit" href="<c:url value="/changePassword-${loggedinuser}" />"><i class="fas fa-lock"></i>&nbsp;Change password</a>
               </div>
               <div class="col-sm-4">
-                <a class="edit" href="<c:url value="/userInbox" />"><i class="fas fa-envelope"></i>&nbsp;Inbox</a>
+                <a class="edit" href="<c:url value="/userInbox-${loggedinuser}" />"><i class="fas fa-envelope"></i>&nbsp;Inbox</a>
               </div>
             </div>
       </div>
       <br>
       <br>
       
-     <form action="#" class="appointment-form" method = "POST">
-         
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="First Name">
-            
-              <input type="text" class="form-control" placeholder="Last Name">
-            
-           
-              <input type="text" class="form-control" placeholder="Email Address">
-              <input type="text" class="form-control" placeholder="Phone">
-              <input type="submit" value="Save" class="btn btn-primary py-3 px-4">
-            </div>
-        </form>
+                <form:form modelAttribute="user" class="appointment-form" method = "POST">
+                    <form:input type="hidden" path="id" id="id"/>
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <form:input type="text" path="firstName" id="firstName" class="form-control"/>
+                        <label for="lastName">Last Name</label>
+                        <form:input type="text" path="lastName" id="lastName" class="form-control" />
+                        <label for="email">Email</label>
+                        <form:input type="text" path="email" id="email" class="form-control" />
+                        <label for="ssoId">Username</label>
+                        <form:input type="text" path="ssoId" id="ssoId" class="form-control" />
+                        <input type="submit" value="Save" class="btn btn-primary py-3 px-4">
+                    </div>
+                </form:form>
         </div>
 
         

@@ -15,10 +15,6 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/magnific-popup.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/aos.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/ionicons.min.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/jquery.timepicker.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/flaticon.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/icomoon.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/style.css">
   </head>
   <body>
@@ -31,14 +27,18 @@
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
 	          <li class="nav-item active"><a href="<c:url value="/welcome2" />" class="nav-link">Home</a></li>
-	          <li class="nav-item"><a href="<c:url value="welcome2/programs" />" class="nav-link">Programs</a></li>
-	          <li class="nav-item"><a href="<c:url value="welcome2/products" />" class="nav-link">Products</a></li>
+	          <li class="nav-item"><a href="<c:url value="/commerce#programs" />" class="nav-link">Programs</a></li>
+	          <li class="nav-item"><a href="<c:url value="/commerce#products" />" class="nav-link">Products</a></li>
             <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
-            <li class="nav-item"><a href="<c:url value="/myprofile-${loggedinuser}" />" class="nav-link">My Profile</a></li>
-            <li class="nav-item"><a href="<c:url value="/logout" />" class="nav-link">Logout</a></li>
+            <li class="nav-item dropdown"><a href="<c:url value="/myprofile-${loggedinuser}" />" class="nav-link dropbtn"><i class="fas fa-user"></i>&nbsp;Username&nbsp;<i class="fas fa-sort-down"></i></a>
+              <div class="dropdown-content">
+                <a href="<c:url value="/myprofile-${loggedinuser}" />">My Profile</a>
+                <a href="<c:url value="/logout" />">Logout</a>
+              </div>
+            </li>
           </ul>
         </div>
-        <button id = "shopBag" type="button"><a href="#" class="nav-link"><i class="fas fa-lg fa-shopping-bag"></i></a></button>
+        <button id = "shopBag" type="button"><a href="<c:url value="/commerce#cart" />" class="nav-link"><i class="fas fa-lg fa-shopping-bag"></i></a></button>
 		  </div>
 	  </nav>
     <!-- END nav -->
@@ -73,12 +73,12 @@
       </div>
       <div class="row">
         <div class="col-md-4">
-          <div class="pricing-wrap ftco-animate img" style="background-image: url(${pageContext.request.contextPath}/static/images/program-1.jpg);">
+          <div class="pricing-wrap ftco-animate img" style="background-image: url(${pageContext.request.contextPath}/static/images/guy.jpg);">
             <div class="title p-4" style="background-color: red;">
               <h3>Weight Lifting</h3>
             </div>
             <div class="text p-4 d-flex align-items-end" style="background-color: rgba(0, 0, 0, 0.849);">
-              <a href="#" class="btn-custom px-4 py-2">Join Now</a>
+              <a href="<c:url value="/commerce#programs" />" class="btn-custom px-4 py-2">Join Now</a>
               
               <div>
                 <span class="price">$240.00</span>
@@ -94,7 +94,7 @@
               <h3>CrossFit</h3>
             </div>
             <div class="text p-4 d-flex align-items-end" style="background-color: rgba(0, 0, 0, 0.849);">
-              <a href="#" class="btn-custom px-4 py-2">Join Now</a>
+              <a href="<c:url value="/commerce#programs" />" class="btn-custom px-4 py-2">Join Now</a>
               
               <div>
                 <span class="price">$240.00</span>
@@ -110,7 +110,7 @@
               <h3>Cardio</h3>
             </div>
             <div class="text p-4 d-flex align-items-end" style="background-color: rgba(0, 0, 0, 0.849);">
-              <a href="#" class="btn-custom px-4 py-2">Join Now</a>
+              <a href="<c:url value="/commerce#programs" />" class="btn-custom px-4 py-2">Join Now</a>
               
               <div>
                 <span class="price">$240.00</span>
@@ -126,7 +126,7 @@
               <h3>TRX</h3>
             </div>
             <div class="text p-4 d-flex align-items-end" style="background-color: rgba(0, 0, 0, 0.849);">
-              <a href="#" class="btn-custom px-4 py-2">Join Now</a>
+              <a href="<c:url value="/commerce#programs" />" class="btn-custom px-4 py-2">Join Now</a>
               
               <div>
                 <span class="price">$240.00</span>
@@ -142,7 +142,7 @@
               <h3>Pilates</h3>
             </div>
             <div class="text p-4 d-flex align-items-end" style="background-color: rgba(0, 0, 0, 0.849);">
-              <a href="#" class="btn-custom px-4 py-2">Join Now</a>
+              <a href="<c:url value="/commerce#programs" />" class="btn-custom px-4 py-2">Join Now</a>
               
               <div>
                 <span class="price">$240.00</span>
@@ -153,12 +153,12 @@
           </div>
         </div>
         <div class="col-md-4">
-          <div class="pricing-wrap ftco-animate img" style="background-image: url(${pageContext.request.contextPath}/static/images/yoga.jpg);">
+          <div class="pricing-wrap ftco-animate img" style="background-image: url(${pageContext.request.contextPath}/static/images/yoga2.jpg);">
             <div class="title p-4" style="background-color: red;">
               <h3>Yoga</h3>
             </div>
             <div class="text p-4 d-flex align-items-end" style="background-color: rgba(0, 0, 0, 0.849);">
-              <a href="#" class="btn-custom px-4 py-2">Join Now</a>
+              <a href="<c:url value="/commerce#programs" />" class="btn-custom px-4 py-2">Join Now</a>
               
               <div>
                 <span class="price">$240.00</span>
@@ -510,10 +510,10 @@
             <div class="ftco-footer-widget mb-4 ml-md-4">
              <h2 class="ftco-heading-2">Programs</h2>
              <ul class="list-unstyled">
-               <li><a href="#" class="py-2 d-block">Crossfit</a></li>
-               <li><a href="#" class="py-2 d-block">Aerobics</a></li>
-               <li><a href="#" class="py-2 d-block">Fitness</a></li>
-               <li><a href="#" class="py-2 d-block">Yoga</a></li>
+              <li><a href="<c:url value="/commerce#programs" />" class="py-2 d-block">Crossfit</a></li>
+              <li><a href="<c:url value="/commerce#programs" />" class="py-2 d-block">Aerobics</a></li>
+              <li><a href="<c:url value="/commerce#programs" />" class="py-2 d-block">Fitness</a></li>
+              <li><a href="<c:url value="/commerce#programs" />" class="py-2 d-block">Yoga</a></li>
              </ul>
            </div>
          </div>
@@ -521,10 +521,10 @@
              <div class="ftco-footer-widget mb-4 ml-md-4">
               <h2 class="ftco-heading-2">Products</h2>
               <ul class="list-unstyled">
-                <li><a href="#" class="py-2 d-block">Jump Ropes</a></li>
-                <li><a href="#" class="py-2 d-block">bla bla</a></li>
-                <li><a href="#" class="py-2 d-block">bla bla</a></li>
-                <li><a href="#" class="py-2 d-block">bla bla</a></li>
+                <li><a href="<c:url value="/commerce#products" />" class="py-2 d-block">Jump Ropes</a></li>
+                <li><a href="<c:url value="/commerce#products" />" class="py-2 d-block">Equipment</a></li>
+                <li><a href="<c:url value="/commerce#products" />" class="py-2 d-block">Creatine</a></li>
+                <li><a href="<c:url value="/commerce#products" />" class="py-2 d-block">Protein</a></li>
               </ul>
             </div>
           </div>
@@ -558,7 +558,7 @@
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
 
-   <script src="${pageContext.request.contextPath}/static/js/jquery.min.js"></script>
+  <script src="${pageContext.request.contextPath}/static/js/jquery.min.js"></script>
   <script src="${pageContext.request.contextPath}/static/js/jquery-migrate-3.0.1.min.js"></script>
   <script src="${pageContext.request.contextPath}/static/js/popper.min.js"></script>
   <script src="${pageContext.request.contextPath}/static/js/bootstrap.min.js"></script>

@@ -91,13 +91,13 @@ public class AdminProgramsController {
     public String updateProgram(@Valid Program program, BindingResult result,
             ModelMap model) {
         if (result.hasErrors()) {
-            return "editProduct";
+            return "editProgram";
         }
         programService.updateProgram(program);
 
 //        model.addAttribute("success", "Product with ID " + product.getIdproduct() + " updated successfully");
         model.addAttribute("loggedinuser", getPrincipal());
-        return "\"redirect:/admin/programs/";
+        return "redirect:/admin/programs/";
     }
     
     
