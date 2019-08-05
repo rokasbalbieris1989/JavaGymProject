@@ -139,29 +139,13 @@
 
                             <!-- FORM -->
                             <div id="formContainer" class="container-fluid">
-                                <form:form  method="PUT" modelAttribute="program" class="appointment-form horizontal-form">
+                                <form:form  method="POST" modelAttribute="program" class="appointment-form horizontal-form">
                                     <form:input type="hidden" path="idprogram" id="idprogram"/>
- 
+
                                     <div class="row form-group">
                                         <label class="col col-md-2 form-control-label">Program Name:</label>
                                         <div class="col-12 col-md-10">
                                             <form:input type="text" class="form-control" path="sports" id="sports" />
-                                        </div>
-                                    </div>
-                                    <div class="row form-group">
-                                        <div class="col col-md-2">
-                                            <label class=" form-control-label">Access:</label>
-                                        </div>
-                                        <div class="col-12 col-md-10">
-                                            <form:input type="text" class="form-control" path="access" id="" />
-                                        </div>
-                                    </div>
-                                    <div class="row form-group">
-                                        <div class="col col-md-2">
-                                            <label class=" form-control-label">Trainer ID:</label>
-                                        </div>
-                                        <div class="col-12 col-md-10">
-                                            <form:input type="number" class="form-control" path="trainer_id" id=""/>
                                         </div>
                                     </div>
                                     <div class="row form-group">
@@ -176,6 +160,12 @@
                                             <form:input type="text" class="form-control" path="images" id="images" />
                                         </div>
                                     </div>
+                                    <div class=" row form-group">
+                                        <label class="col col-md-2 form-control-label">Category:</label>
+                                        <div class="col-12 col-md-10">
+                                            <form:input type="text" class="form-control" path="category" id="category" />
+                                        </div>
+                                    </div>
                                     <div class="row form-group">
                                         <label class="col col-md-2 form-control-label">Price:</label>
                                         <div class="col-12 col-md-10">
@@ -185,8 +175,8 @@
                                     <div id="btnsForm" class="form-group pull-right">
                                         <input type="submit" value="Add" class="btn" id="editBtn">
                                         <a href="<c:url value="/admin/programs/" />"><button type="button" class="btn btn-secondary">Cancel</button></a>
-                                        
-                                        </div>
+
+                                    </div>
                                 </form:form>
                             </div>
                         </div>

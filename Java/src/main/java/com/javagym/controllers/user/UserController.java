@@ -5,6 +5,8 @@
  */
 package com.javagym.controllers.user;
 
+import com.javagym.entities.Product;
+import com.javagym.entities.Program;
 import java.util.List;
 import java.util.Locale;
 
@@ -29,6 +31,8 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.javagym.entities.User;
 import com.javagym.entities.UserProfile;
+import com.javagym.services.product.ProductService;
+import com.javagym.services.program.ProgramService;
 import com.javagym.services.userProfile.UserProfileService;
 import com.javagym.services.user.UserService;
 
@@ -39,7 +43,13 @@ public class UserController {
 
     @Autowired
     UserService userService;
+    
+    @Autowired
+    ProductService productService;
 
+    @Autowired
+    ProgramService programService;
+    
     @Autowired
     UserProfileService userProfileService;
 
@@ -69,17 +79,14 @@ public class UserController {
     
     @RequestMapping(value = {"/commerce"}, method = RequestMethod.GET)
     public String programs( ModelMap model) {
-        
+        List<Product> products = productService.findAllProducts();
+        model.addAttribute("products", products);
+        List<Program> programs = programService.findAllPrograms();
+        model.addAttribute("programs", programs);  
         model.addAttribute("loggedinuser", getPrincipal());
         return "commerce";
     }
     
-    @RequestMapping(value = {"/commerce#products"}, method = RequestMethod.GET)
-    public String products( ModelMap model) {
-        
-        model.addAttribute("loggedinuser", getPrincipal());
-        return "commerce";
-    }
 
     /**
      * This method will user's profile.

@@ -167,9 +167,9 @@
                                             
                                             <th class="thInbox">name</th>
                                             <th class="thInbox">description</th>
-                                            <th class="thInbox">access</th>
-                                            <th class="thInbox">trainer_id</th>
+                                            <th class="thInbox">category</th>
                                             <th class="thInbox">price</th>
+                                            <th class="thInbox">image</th>
                                             <th></th>
                                         </tr>
                                     </thead>
@@ -179,10 +179,9 @@
                                                 
                                                 <td>${program.sports}</td>
                                                 <td>${program.description}</td>
-                                                <td>${program.access}</td>
-                                                <td>${program.trainer_id}</td>
+                                                <td>${program.category}</td>
                                                 <td>${program.prices}</td>
-
+                                                <td>${program.images}</td>
                                                 <td>
                                                     <div class="table-data-feature">
                                                         <a href="<c:url value="/admin/programs/edit-program-${program.idprogram}" />"><button class="item"  data-placement="top" title="Edit">

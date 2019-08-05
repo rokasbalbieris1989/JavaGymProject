@@ -12,10 +12,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Null;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
@@ -36,14 +34,6 @@ public class Program implements Serializable {
     private Integer prices;
 
     @NotEmpty
-    @Column(name = "access", nullable = false)
-    private String access;
-
-    @NotNull
-    @Column(name = "trainer_id", nullable = false)
-    private int trainer_id;
-
-    @NotEmpty
     @Column(name = "images", nullable = false)
     private String images;
 
@@ -58,12 +48,10 @@ public class Program implements Serializable {
     public Program() {
     }
 
-    public Program(Integer idprogram, String sports, Integer prices, String access, Integer trainer_id, String images, String description, String category, String brand) {
+    public Program(Integer idprogram, String sports, Integer prices, String images, String description, String category, String brand) {
         this.idprogram = idprogram;
         this.sports = sports;
         this.prices = prices;
-        this.access = access;
-        this.trainer_id = trainer_id;
         this.images = images;
         this.description = description;
         this.category = category;
@@ -91,22 +79,6 @@ public class Program implements Serializable {
 
     public void setPrices(Integer prices) {
         this.prices = prices;
-    }
-
-    public String getAccess() {
-        return access;
-    }
-
-    public void setAccess(String access) {
-        this.access = access;
-    }
-
-    public Integer getTrainer_id() {
-        return trainer_id;
-    }
-
-    public void setTrainer_id(Integer trainer_id) {
-        this.trainer_id = trainer_id;
     }
 
     public String getImages() {
@@ -139,8 +111,6 @@ public class Program implements Serializable {
         hash = 61 * hash + Objects.hashCode(this.idprogram);
         hash = 61 * hash + Objects.hashCode(this.sports);
         hash = 61 * hash + Objects.hashCode(this.prices);
-        hash = 61 * hash + Objects.hashCode(this.access);
-        hash = 61 * hash + Objects.hashCode(this.trainer_id);
         hash = 61 * hash + Objects.hashCode(this.images);
         hash = 61 * hash + Objects.hashCode(this.description);
         hash = 61 * hash + Objects.hashCode(this.category);
@@ -162,9 +132,6 @@ public class Program implements Serializable {
         if (!Objects.equals(this.sports, other.sports)) {
             return false;
         }
-        if (!Objects.equals(this.access, other.access)) {
-            return false;
-        }
         if (!Objects.equals(this.images, other.images)) {
             return false;
         }
@@ -181,9 +148,7 @@ public class Program implements Serializable {
         if (!Objects.equals(this.prices, other.prices)) {
             return false;
         }
-        if (!Objects.equals(this.trainer_id, other.trainer_id)) {
-            return false;
-        }
+        
         return true;
     }
 }

@@ -39,13 +39,11 @@ public class ProgramServiceImpl implements ProgramService{
     public void updateProgram(Program program) {
         Program entity = dao.findById(program.getIdprogram());
 		if(entity!=null){
-			entity.setAccess(program.getAccess());
 			entity.setImages(program.getImages());
 			entity.setPrices(program.getPrices());
 			entity.setCategory(program.getCategory());
 			entity.setSports(program.getSports());
 			entity.setDescription(program.getDescription());
-			entity.setTrainer_id(program.getTrainer_id());
 		}       
     }
 

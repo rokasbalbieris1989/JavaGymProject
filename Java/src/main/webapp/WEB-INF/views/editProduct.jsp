@@ -176,6 +176,12 @@
                                             <form:input type="text" class="form-control" path="image" id="image" value=""/>
                                         </div>
                                     </div>
+                                    <div class=" row form-group">
+                                        <label class="col col-md-2 form-control-label">Category:</label>
+                                        <div class="col-12 col-md-10">
+                                            <form:input type="text" class="form-control" path="category" id="category" />
+                                        </div>
+                                    </div>
                                     <div class="row form-group">
                                         <label class="col col-md-2 form-control-label">Price:</label>
                                         <div class="col-12 col-md-10">
