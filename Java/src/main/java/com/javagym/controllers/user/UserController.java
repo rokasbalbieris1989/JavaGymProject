@@ -71,8 +71,8 @@ public class UserController {
      */
     @RequestMapping(value = {"/welcome2"}, method = RequestMethod.GET)
     public String admin( ModelMap model) {
-        
-        model.addAttribute("edit", false);
+        List<Program> programs = programService.findAllPrograms();
+        model.addAttribute("programs", programs);
         model.addAttribute("loggedinuser", getPrincipal());
         return "welcome2";
     }

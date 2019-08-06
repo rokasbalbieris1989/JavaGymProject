@@ -1,5 +1,7 @@
 package com.javagym.controllers;
 
+import com.javagym.entities.Program;
+import com.javagym.entities.Trainer;
 import java.util.List;
 import java.util.Locale;
 
@@ -26,6 +28,8 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.javagym.entities.User;
 import com.javagym.entities.UserProfile;
+import com.javagym.services.program.ProgramService;
+import com.javagym.services.trainer.TrainerService;
 import com.javagym.services.userProfile.UserProfileService;
 import com.javagym.services.user.UserService;
 import java.util.HashSet;
@@ -38,6 +42,12 @@ public class AppController {
 
     @Autowired
     UserService userService;
+    
+    @Autowired
+    ProgramService programService;
+    
+    @Autowired
+    TrainerService trainerService;
 
     @Autowired
     UserProfileService userProfileService;
@@ -56,6 +66,10 @@ public class AppController {
      */
     @RequestMapping(value = {"/", "/welcome"}, method = RequestMethod.GET)
     public String welcomePage(ModelMap model) {
+        List<Program> programs = programService.findAllPrograms();
+        List<Trainer> trainers = trainerService.findAllTrainers();
+        model.addAttribute("trainers", trainers);
+        model.addAttribute("programs", programs);
         return "welcome";
     }
 

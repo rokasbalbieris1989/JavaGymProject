@@ -44,6 +44,7 @@
 	          <li class="nav-item"><a href="<c:url value="/commerce#programs" />" class="nav-link">Programs</a></li>
 	          <li class="nav-item"><a href="<c:url value="/commerce#products" />" class="nav-link">Products</a></li>
             <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+            <li class="nav-item"><a href="<c:url value="/chat" />" class="nav-link">Chat</a></li>
             <li class="nav-item"><a href="<c:url value="/logout" />" class="nav-link">Log Out</a></li>
           </ul>
         </div>

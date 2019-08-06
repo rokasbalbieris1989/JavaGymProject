@@ -29,6 +29,7 @@
                         <li class="nav-item active"><a href="<c:url value="/commerce#programs" />" class="nav-link">Programs</a></li>
                         <li class="nav-item"><a href="<c:url value="/" />" class="nav-link">Products</a></li>
                         <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                        <li class="nav-item"><a href="<c:url value="/chat" />" class="nav-link">Chat</a></li>
                         <li class="nav-item dropdown"><a href="<c:url value="/myprofile-${loggedinuser}" />" class="nav-link dropbtn"><i
                                     class="fas fa-user"></i>&nbsp;${loggedinuser}&nbsp;<i class="fas fa-sort-down"></i></a>
                             <div class="dropdown-content">
@@ -70,7 +71,7 @@
                     <c:forEach items="${programs}" var="program">
                         <div class=" shop-item col-md-4">
                             <div class="pricing-wrap ftco-animate img">
-                                <img class="shop-item-image" src="${pageContext.request.contextPath}/static/images/gurl.jpg" style="width: 100%; height: 100%;">
+                                <img class="shop-item-image" src="${pageContext.request.contextPath}/${program.images}" style="width: 100%; height: 100%;">
                                 <div class="title p-4" style="background-color: red;">
                                     <h3 class="shop-item-title">${program.sports}</h3>
                                 </div>

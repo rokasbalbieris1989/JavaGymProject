@@ -77,15 +77,11 @@ public class AdminMainController {
      */
     @RequestMapping(value = {"/admin"}, method = RequestMethod.GET)
     public String admin(ModelMap model) {
-//        List<Product> products = productService.findAllProducts();
-//        model.addAttribute("products", products);
-//        List<Program> programs = programService.findAllPrograms();
-//        model.addAttribute("programs", programs);
-//        List<User> users = userService.findAllUsers();
-//        model.addAttribute("users", users);
+        List<Product> products = productService.findAllProducts();
+        model.addAttribute("products", products);  
         model.addAttribute("edit", true);
         model.addAttribute("loggedinuser", getPrincipal());
-        return "admin";
+        return "adminProducts";
     }
    
     /**
