@@ -27,7 +27,7 @@
 <div id="chat-page" class="hidden">
     <div class="chat-container">
         <div class="chat-header">
-            <h2>Winery Chat</h2>
+            <h2>Java Gym Forum</h2>
         </div>
         <div class="connecting">
             Connecting...
