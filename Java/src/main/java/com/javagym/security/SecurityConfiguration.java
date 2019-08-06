@@ -43,7 +43,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests().antMatchers("/","/welcome","/login","/newuser").permitAll()
 				.antMatchers( "/userlist", "/delete-product-*", "/admin/**","/admin/*","/edit-product-*")
                                 .access("hasRole('ADMIN')")
-                                .antMatchers("/changePassword-*","/welcome2/*","/commerce#products","/commerce","/commerce#programs", "/welcome2","/editUserProfile-*","/myprofile-*")
+                                .antMatchers("/changePassword-*","/welcome2/*","/chat/*","/commerce#products","/commerce","/commerce#programs", "/welcome2","/editUserProfile-*","/myprofile-*")
                                 .access("hasRole('USER') ")
                                 .and().formLogin().loginPage("/login").successHandler(customSuccessHandler)
 				.loginProcessingUrl("/login").usernameParameter("ssoId").passwordParameter("password").and()

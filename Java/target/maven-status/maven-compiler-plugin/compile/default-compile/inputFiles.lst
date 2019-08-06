@@ -1,6 +1,7 @@
 C:\Users\me\Downloads\JavaGymProject\Java\src\main\java\com\javagym\daos\trainer\TrainerDaoImpl.java
 C:\Users\me\Downloads\JavaGymProject\Java\src\main\java\com\javagym\entities\Product.java
 C:\Users\me\Downloads\JavaGymProject\Java\src\main\java\com\javagym\controllers\admin\AdminSalesController.java
+C:\Users\me\Downloads\JavaGymProject\Java\src\main\java\com\javagym\entities\ChatMessage.java
 C:\Users\me\Downloads\JavaGymProject\Java\src\main\java\com\javagym\daos\AbstractDao.java
 C:\Users\me\Downloads\JavaGymProject\Java\src\main\java\com\javagym\daos\product\ProductDaoImpl.java
 C:\Users\me\Downloads\JavaGymProject\Java\src\main\java\com\javagym\daos\userProfile\UserProfileDao.java
@@ -13,6 +14,7 @@ C:\Users\me\Downloads\JavaGymProject\Java\src\main\java\com\javagym\configuratio
 C:\Users\me\Downloads\JavaGymProject\Java\src\main\java\com\javagym\entities\Program.java
 C:\Users\me\Downloads\JavaGymProject\Java\src\main\java\com\javagym\services\product\ProductServiceImpl.java
 C:\Users\me\Downloads\JavaGymProject\Java\src\main\java\com\javagym\daos\user\UserDaoImpl.java
+C:\Users\me\Downloads\JavaGymProject\Java\src\main\java\com\javagym\configurations\WebSocketConfig.java
 C:\Users\me\Downloads\JavaGymProject\Java\src\main\java\com\javagym\services\user\UserServiceImpl.java
 C:\Users\me\Downloads\JavaGymProject\Java\src\main\java\com\javagym\daos\sale\SaleDaoImpl.java
 C:\Users\me\Downloads\JavaGymProject\Java\src\main\java\com\javagym\daos\trainer\TrainerDao.java
@@ -28,6 +30,7 @@ C:\Users\me\Downloads\JavaGymProject\Java\src\main\java\com\javagym\configuratio
 C:\Users\me\Downloads\JavaGymProject\Java\src\main\java\com\javagym\services\user\UserService.java
 C:\Users\me\Downloads\JavaGymProject\Java\src\main\java\com\javagym\services\program\ProgramServiceImpl.java
 C:\Users\me\Downloads\JavaGymProject\Java\src\main\java\com\javagym\controllers\admin\AdminMainController.java
+C:\Users\me\Downloads\JavaGymProject\Java\src\main\java\com\javagym\controllers\ChatController.java
 C:\Users\me\Downloads\JavaGymProject\Java\src\main\java\com\javagym\services\sale\SaleService.java
 C:\Users\me\Downloads\JavaGymProject\Java\src\main\java\com\javagym\services\userProfile\UserProfileService.java
 C:\Users\me\Downloads\JavaGymProject\Java\src\main\java\com\javagym\controllers\admin\AdminTrainerController.java
