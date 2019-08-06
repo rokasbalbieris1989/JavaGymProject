@@ -88,118 +88,6 @@
                         </div>
                     </c:forEach>
 
-                    <div class=" shop-item col-md-4">
-                        <div class="pricing-wrap ftco-animate img">
-                            <img class="shop-item-image" src="${pageContext.request.contextPath}/static/images/gurl.jpg" style="width: 100%; height: 100%;">
-                            <div class="title p-4" style="background-color: red;">
-                                <h3 class="shop-item-title">Crossfit</h3>
-                            </div>
-                            <div class="text p-4 d-flex align-items-end" style="background-color: rgba(0, 0, 0, 0.849);">
-                                <a href="#" class="shop-item-button btn-custom px-4 py-2">Join Now</a>
-
-                                <div>
-                                    <span class="shop-item-price price">$240.00</span>
-                                    <h3><a href="#">Crossfit&nbsp;<i class="fas fa-chevron-circle-down"></i></a></h3>
-                                    <p class="shop-item-detail" style="color: white;">Far far away, behind the word mountains, far from the
-                                        countries. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum dolorem error hic ex atque
-                                        nesciunt distinctio, nihil voluptatum at sequi quo ducimus molestiae obcaecati nobis possimus sit
-                                        itaque
-                                        cupiditate aliquid.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class=" shop-item col-md-4">
-                        <div class="pricing-wrap ftco-animate img">
-                            <img class="shop-item-image" src="${pageContext.request.contextPath}/static/images/cardio1.jpg" style="width: 100%; height: 100%;">
-                            <div class="title p-4" style="background-color: red;">
-                                <h3 class="shop-item-title">Cardio</h3>
-                            </div>
-                            <div class="text p-4 d-flex align-items-end" style="background-color: rgba(0, 0, 0, 0.849);">
-                                <a href="#" class="shop-item-button btn-custom px-4 py-2">Join Now</a>
-
-                                <div>
-                                    <span class="shop-item-price price">$240.00</span>
-                                    <h3><a href="#">Cardio&nbsp;<i class="fas fa-chevron-circle-down"></i></a></h3>
-                                    <p class="shop-item-detail" style="color: white;">Far far away, behind the word mountains, far from the
-                                        countries. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum dolorem error hic ex atque
-                                        nesciunt distinctio, nihil voluptatum at sequi quo ducimus molestiae obcaecati nobis possimus sit
-                                        itaque
-                                        cupiditate aliquid.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class=" shop-item col-md-4">
-                        <div class="pricing-wrap ftco-animate img">
-                            <img class="shop-item-image" src="${pageContext.request.contextPath}/static/images/trx.jpg" style="width: 100%; height: 100%;">
-                            <div class="title p-4" style="background-color: red;">
-                                <h3 class="shop-item-title">TRX</h3>
-                            </div>
-                            <div class="text p-4 d-flex align-items-end" style="background-color: rgba(0, 0, 0, 0.849);">
-                                <a href="#" class="shop-item-button btn-custom px-4 py-2">Join Now</a>
-
-                                <div>
-                                    <span class="shop-item-price price">$240.00</span>
-                                    <h3><a href="#">TRX&nbsp;<i class="fas fa-chevron-circle-down"></i></a></h3>
-                                    <p class="shop-item-detail" style="color: white;">Far far away, behind the word mountains, far from the
-                                        countries. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum dolorem error hic ex atque
-                                        nesciunt distinctio, nihil voluptatum at sequi quo ducimus molestiae obcaecati nobis possimus sit
-                                        itaque
-                                        cupiditate aliquid.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class=" shop-item col-md-4">
-                        <div class="pricing-wrap ftco-animate img">
-                            <img class="shop-item-image" src="${pageContext.request.contextPath}/static/images/pilates_1.jpg" style="width: 100%; height: 100%;">
-                            <div class="title p-4" style="background-color: red;">
-                                <h3 class="shop-item-title">Pilates</h3>
-                            </div>
-                            <div class="text p-4 d-flex align-items-end" style="background-color: rgba(0, 0, 0, 0.849);">
-                                <a href="#" class="shop-item-button btn-custom px-4 py-2">Join Now</a>
-
-                                <div>
-                                    <span class="shop-item-price price">$240.00</span>
-                                    <h3><a href="#">Pilates&nbsp;<i class="fas fa-chevron-circle-down"></i></a></h3>
-                                    <p class="shop-item-detail" style="color: white;">Far far away, behind the word mountains, far from the
-                                        countries. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum dolorem error hic ex atque
-                                        nesciunt distinctio, nihil voluptatum at sequi quo ducimus molestiae obcaecati nobis possimus sit
-                                        itaque
-                                        cupiditate aliquid.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class=" shop-item col-md-4">
-                        <div class="pricing-wrap ftco-animate img">
-                            <img class="shop-item-image" src="${pageContext.request.contextPath}/static/images/yoga2.jpg" style="width: 100%; height: 100%;">
-                            <div class="title p-4" style="background-color: red;">
-                                <h3 class="shop-item-title">Yoga</h3>
-                            </div>
-                            <div class="text p-4 d-flex align-items-end" style="background-color: rgba(0, 0, 0, 0.849);">
-                                <a href="#" class="shop-item-button btn-custom px-4 py-2">Join Now</a>
-
-                                <div>
-                                    <span class="shop-item-price price">$240.00</span>
-                                    <h3><a href="#">Yoga&nbsp;<i class="fas fa-chevron-circle-down"></i></a></h3>
-                                    <p class="shop-item-detail" style="color: white;">Far far away, behind the word mountains, far from the
-                                        countries. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum dolorem error hic ex atque
-                                        nesciunt distinctio, nihil voluptatum at sequi quo ducimus molestiae obcaecati nobis possimus sit
-                                        itaque
-                                        cupiditate aliquid.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </section>
@@ -231,24 +119,29 @@
                     <p style="color: white;"><i class="fas fa-filter fa-lg"></i></p>
                     <div class="form-group col-md-3">
                         <select data-filter="make" class="filter-category filter form-control">
-                            <option class="filter-option" value="">Category</option>
-                            <option class="filter-option" value="">Show All</option>
-                            <option class="filter-option" value="">Equipment</option>
+                            <option class="filter-option" value="">Show All Categories</option>
+                             <c:forEach items="${products}" var="product">
+                            <option class="filter-option" value="">${product.category}</option>
+                            </c:forEach>
+<!--                            <option class="filter-option" value="">Equipment</option>
                             <option class="filter-option" value="">Jump Ropes</option>
                             <option class="filter-option" value="">Creatine</option>
-                            <option class="filter-option" value="">Protein</option>
+                            <option class="filter-option" value="">Protein</option>-->
                         </select>
                     </div>
                     <div class="form-group col-md-3">
                         <select data-filter="model" class="filter-brand filter form-control">
-                            <option class="filter-option" value="">Brand</option>
-                            <option class="filter-option" value="">Show All</option>
+                            <option class="filter-option" value="">Show All Brands</option>
+                             <c:forEach items="${products}" var="product">
+                            <option class="filter-option" value="">${product.brand}</option>
+                            </c:forEach>
+<!--                            <option class="filter-option" value="">Show All</option>
                             <option class="filter-option" value="">MuscleTech</option>
                             <option class="filter-option" value="">Optimum Nutrition</option>
                             <option class="filter-option" value="">Befect</option>
                             <option class="filter-option" value="">Monkey</option>
                             <option class="filter-option" value="">Beeyeo</option>
-                            <option class="filter-option" value="">Yeego</option>
+                            <option class="filter-option" value="">Yeego</option>-->
                         </select>
                     </div>
                 </div>
@@ -269,10 +162,10 @@
                                     <div class="img-info">
                                         <div class="info-inner">
                                             <span class="shop-item-title p-name">${product.name}</span>
-                                            <span class="p-company">Category:${product.category} Brand:${product.brand} Description: ${product.description}</span>
+                                            <span class="p-company">Description: ${product.description}</span>
                                         </div>
-                                        <div class="a-size"><a href="<c:url value="/singleProduct-${product.idproduct}" />"><button type="button" title="View">View Details<br><i
-                                                        class="fas fa-eye fa-2x"></i></button></a></div>
+<!--                                        <div class="a-size"><a href="<c:url value="/singleProduct-${product.idproduct}" />"><button type="button" title="View">View Details<br><i
+                                                        class="fas fa-eye fa-2x"></i></button></a></div>-->
                                     </div>
                                 </div>
 
