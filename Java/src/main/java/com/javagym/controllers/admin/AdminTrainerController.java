@@ -57,7 +57,6 @@ public class AdminTrainerController {
     public String addTrainer(ModelMap model) {
         Trainer trainer = new Trainer();
         model.addAttribute("trainer", trainer); 
-        model.addAttribute("edit", true);
         model.addAttribute("loggedinuser", getPrincipal());
         return "addTrainer";
     }
@@ -71,7 +70,6 @@ public class AdminTrainerController {
         trainerService.saveTrainer(trainer);
         
         model.addAttribute("loggedinuser", getPrincipal());
-        //return "success";
         return "redirect:/admin/trainers/";
     }
     
@@ -80,7 +78,6 @@ public class AdminTrainerController {
     public String editTrainer(@PathVariable int idtrainer, ModelMap model) {
         Trainer trainer = trainerService.findById(idtrainer);
         model.addAttribute("trainer", trainer);
-        model.addAttribute("edit", true);
         model.addAttribute("loggedinuser", getPrincipal());
         return "editTrainer";
     }

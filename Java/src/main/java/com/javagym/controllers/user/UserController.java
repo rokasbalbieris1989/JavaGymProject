@@ -129,7 +129,6 @@ public class UserController {
             return "editUserProfile";
         }
 
-        //Uncomment below 'if block' if you WANT TO ALLOW UPDATING SSO_ID in UI which is a unique key to a User.
         if (!userService.isUserSSOUnique(user.getId(), user.getSsoId())) {
             FieldError ssoError = new FieldError("user", "ssoId", messageSource.getMessage("non.unique.ssoId", new String[]{user.getSsoId()}, Locale.getDefault()));
             result.addError(ssoError);
@@ -142,58 +141,7 @@ public class UserController {
         return "userProfile";
     }
 
-//    /**
-//     * This method will user's profile.
-//     */
-//    @RequestMapping(value = {"/changePassword-{ssoId}"}, method = RequestMethod.GET)
-//    public String changePassword(@PathVariable String ssoId, ModelMap model) {
-//
-//        User user = userService.findBySSO(ssoId);
-//        model.addAttribute("user", user);
-//        model.addAttribute("loggedinuser", getPrincipal());
-//        return "changePassword";
-//    }
-
-//    /**
-//     * This method will provide the medium to update an existing user.
-//     */
-//    @RequestMapping(value = {"/edit-user-{ssoId}"}, method = RequestMethod.GET)
-//    public String editUser(@PathVariable String ssoId, ModelMap model) {
-//        User user = userService.findBySSO(ssoId);
-//        model.addAttribute("user", user);
-//        model.addAttribute("edit", true);
-//        model.addAttribute("loggedinuser", getPrincipal());
-//        return "registration";
-//    }
-//
-//    /**
-//     * This method will be called on form submission, handling POST request for
-//     * updating user in database. It also validates the user input
-//     */
-//    @RequestMapping(value = {"/edit-user-{ssoId}"}, method = RequestMethod.POST)
-//    public String updateUser(@Valid User user, BindingResult result,
-//            ModelMap model, @PathVariable String ssoId) {
-//
-//        if (result.hasErrors()) {
-//            return "registration";
-//        }
-//
-//        /*//Uncomment below 'if block' if you WANT TO ALLOW UPDATING SSO_ID in UI which is a unique key to a User.
-//		if(!userService.isUserSSOUnique(user.getId(), user.getSsoId())){
-//			FieldError ssoError =new FieldError("user","ssoId",messageSource.getMessage("non.unique.ssoId", new String[]{user.getSsoId()}, Locale.getDefault()));
-//		    result.addError(ssoError);
-//			return "registration";
-//		}*/
-//        userService.updateUser(user);
-//
-//        model.addAttribute("success", "User " + user.getFirstName() + " " + user.getLastName() + " updated successfully");
-//        model.addAttribute("loggedinuser", getPrincipal());
-//        return "registrationsuccess";
-//    }
-
-    /**
-     * This method will provide UserProfile list to views
-     */
+   
     @ModelAttribute("roles")
     public List<UserProfile> initializeProfiles() {
         return userProfileService.findAll();

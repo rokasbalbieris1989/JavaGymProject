@@ -6,18 +6,10 @@
 package com.javagym.controllers.admin;
 
 import com.javagym.entities.Product;
-import com.javagym.entities.Program;
-import com.javagym.entities.Trainer;
-import com.javagym.entities.User;
 import com.javagym.services.product.ProductService;
 import com.javagym.services.program.ProgramService;
 import com.javagym.services.trainer.TrainerService;
 import java.util.List;
-import java.util.Locale;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
@@ -28,10 +20,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.rememberme.PersistentTokenBasedRememberMeServices;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.FieldError;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
@@ -98,14 +86,4 @@ public class AdminMainController {
         }
         return userName;
     }
-
-    /**
-     * This method returns true if users is already authenticated [logged-in],
-     * else false.
-     */
-    private boolean isCurrentAuthenticationAnonymous() {
-        final Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        return authenticationTrustResolver.isAnonymous(authentication);
-    }
-
 }

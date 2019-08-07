@@ -49,7 +49,6 @@ public class AdminProgramsController {
     public String adminPrograms(ModelMap model) {
         List<Program> programs = programService.findAllPrograms();
         model.addAttribute("programs", programs);  
-        model.addAttribute("edit", true);
         model.addAttribute("loggedinuser", getPrincipal());
         return "adminPrograms";
     }
@@ -58,7 +57,6 @@ public class AdminProgramsController {
     public String addProgram(ModelMap model) {
         Program program = new Program();
         model.addAttribute("program", program); 
-        model.addAttribute("edit", true);
         model.addAttribute("loggedinuser", getPrincipal());
         return "addProgram";
     }
@@ -81,7 +79,6 @@ public class AdminProgramsController {
     public String editProgram(@PathVariable int idprogram, ModelMap model) {
         Program program = programService.findById(idprogram);
         model.addAttribute("program", program);
-        model.addAttribute("edit", true);
         model.addAttribute("loggedinuser", getPrincipal());
         return "editProgram";
     }

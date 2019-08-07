@@ -87,7 +87,6 @@ public class AppController {
     public String newUser(ModelMap model) {
         User user = new User();
         model.addAttribute("user", user);
-        model.addAttribute("edit", false);
         model.addAttribute("loggedinuser", getPrincipal());
         return "signup";
     }

@@ -46,7 +46,6 @@ public class AdminSalesController {
     public String adminSales(ModelMap model) {
         List<Sale> sales = saleService.findAllSales();
         model.addAttribute("sales", sales);  
-        model.addAttribute("edit", true);
         model.addAttribute("loggedinuser", getPrincipal());
         return "adminSales";
     }

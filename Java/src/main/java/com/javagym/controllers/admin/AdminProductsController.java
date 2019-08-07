@@ -49,7 +49,6 @@ public class AdminProductsController {
     public String adminProducts(ModelMap model) {
         List<Product> products = productService.findAllProducts();
         model.addAttribute("products", products);  
-        model.addAttribute("edit", true);
         model.addAttribute("loggedinuser", getPrincipal());
         return "adminProducts";
     }
@@ -58,7 +57,6 @@ public class AdminProductsController {
     public String addProduct(ModelMap model) {
         Product product = new Product();
         model.addAttribute("product", product); 
-        model.addAttribute("edit", true);
         model.addAttribute("loggedinuser", getPrincipal());
         return "addProduct";
     }
@@ -81,7 +79,6 @@ public class AdminProductsController {
     public String editProduct(@PathVariable int idproduct, ModelMap model) {
         Product product = productService.findById(idproduct);
         model.addAttribute("product", product);
-        model.addAttribute("edit", true);
         model.addAttribute("loggedinuser", getPrincipal());
         return "editProduct";
     }
