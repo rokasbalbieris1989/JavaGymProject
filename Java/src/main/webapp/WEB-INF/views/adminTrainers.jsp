@@ -113,6 +113,7 @@
                         <div class="container-fluid">
                             <div class="header-wrap">
                                 <ul class="list-unstyled navbar__list ml-auto">
+                                    <li class="headerLinks"><a href="<c:url value="/chat" />" >Chat</a></li>
                                      <li class="headerLinks"><a href="<c:url value="/admin/" />" >Admin</a></li>
                                     <li class="headerLinks"><a href="<c:url value="/logout" />" >Log Out</a></li>
                                 </ul>

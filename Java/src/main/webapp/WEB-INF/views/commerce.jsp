@@ -120,28 +120,28 @@
                     <div class="form-group col-md-3">
                         <select data-filter="make" class="filter-category filter form-control">
                             <option class="filter-option" value="">Show All Categories</option>
-                             <c:forEach items="${products}" var="product">
-                            <option class="filter-option" value="">${product.category}</option>
+                            <c:forEach items="${products}" var="product">
+                                <option class="filter-option" value="">${product.category}</option>
                             </c:forEach>
-<!--                            <option class="filter-option" value="">Equipment</option>
-                            <option class="filter-option" value="">Jump Ropes</option>
-                            <option class="filter-option" value="">Creatine</option>
-                            <option class="filter-option" value="">Protein</option>-->
+                            <!--                            <option class="filter-option" value="">Equipment</option>
+                                                        <option class="filter-option" value="">Jump Ropes</option>
+                                                        <option class="filter-option" value="">Creatine</option>
+                                                        <option class="filter-option" value="">Protein</option>-->
                         </select>
                     </div>
                     <div class="form-group col-md-3">
                         <select data-filter="model" class="filter-brand filter form-control">
                             <option class="filter-option" value="">Show All Brands</option>
-                             <c:forEach items="${products}" var="product">
-                            <option class="filter-option" value="">${product.brand}</option>
+                            <c:forEach items="${products}" var="product">
+                                <option class="filter-option" value="">${product.brand}</option>
                             </c:forEach>
-<!--                            <option class="filter-option" value="">Show All</option>
-                            <option class="filter-option" value="">MuscleTech</option>
-                            <option class="filter-option" value="">Optimum Nutrition</option>
-                            <option class="filter-option" value="">Befect</option>
-                            <option class="filter-option" value="">Monkey</option>
-                            <option class="filter-option" value="">Beeyeo</option>
-                            <option class="filter-option" value="">Yeego</option>-->
+                            <!--                            <option class="filter-option" value="">Show All</option>
+                                                        <option class="filter-option" value="">MuscleTech</option>
+                                                        <option class="filter-option" value="">Optimum Nutrition</option>
+                                                        <option class="filter-option" value="">Befect</option>
+                                                        <option class="filter-option" value="">Monkey</option>
+                                                        <option class="filter-option" value="">Beeyeo</option>
+                                                        <option class="filter-option" value="">Yeego</option>-->
                         </select>
                     </div>
                 </div>
@@ -152,34 +152,34 @@
 
 
         <div class="container page-wrapper">
-            
-                <div class="shop-items page-inner">
-                    <div class="row">
-                        <c:forEach items="${products}" var="product">
-                            <div class="shop-item el-wrapper col-md-3">
-                                <div class="box-up">
-                                    <img class="shop-item-image img" src="${pageContext.request.contextPath}/${product.image}">
-                                    <div class="img-info">
-                                        <div class="info-inner">
-                                            <span class="shop-item-title p-name">${product.name}</span>
-                                            <span class="p-company">Description: ${product.description}</span>
-                                        </div>
-<!--                                        <div class="a-size"><a href="<c:url value="/singleProduct-${product.idproduct}" />"><button type="button" title="View">View Details<br><i
-                                                        class="fas fa-eye fa-2x"></i></button></a></div>-->
-                                    </div>
-                                </div>
 
-                                <div class="shop-item-details box-down">
-                                    <div class="h-bg">
-                                        <div class="h-bg-inner"></div>
+            <div class="shop-items page-inner">
+                <div class="row">
+                    <c:forEach items="${products}" var="product">
+                        <div class="shop-item el-wrapper col-md-3">
+                            <div class="box-up">
+                                <img class="shop-item-image img" src="${pageContext.request.contextPath}/${product.image}">
+                                <div class="img-info">
+                                    <div class="info-inner">
+                                        <span class="shop-item-title p-name">${product.name}</span>
+                                        <span class="p-company">Description: ${product.description}</span>
                                     </div>
-                                    <a class="cart" href="#">
-                                        <span class="shop-item-price price">&#36;${product.price}</span>
-                                        <span class="shop-item-button add-to-cart">BUY</span>
-                                    </a>
+<!--                                        <div class="a-size"><a href="<c:url value="/singleProduct-${product.idproduct}" />"><button type="button" title="View">View Details<br><i
+                                                    class="fas fa-eye fa-2x"></i></button></a></div>-->
                                 </div>
                             </div>
-                        </c:forEach>
+
+                            <div class="shop-item-details box-down">
+                                <div class="h-bg">
+                                    <div class="h-bg-inner"></div>
+                                </div>
+                                <a class="cart" href="#">
+                                    <span class="shop-item-price price">&#36;${product.price}</span>
+                                    <span class="shop-item-button add-to-cart">BUY</span>
+                                </a>
+                            </div>
+                        </div>
+                    </c:forEach>
 
                 </div>
             </div>
@@ -212,13 +212,13 @@
             </div>
             <div class="cart-total">
                 <strong class="cart-total-title">Total</strong>
-                <span class="cart-total-price">$0</span>
+                <span class="cart-total-price"><span>$</span>0</span>
             </div>
 
-            <div class="row">
+            <div id="paypal-button-container" style="width: 200px; float: right;">
                 <script src="https://www.paypal.com/sdk/js?client-id=sb"></script>
                 <script>
-                    paypal.Buttons().render('body');
+                    paypal.Buttons().render('#paypal-button-container');
                 </script>
             </div>
         </section>
@@ -299,7 +299,30 @@
 
 
 
+        <script src="https://www.paypal.com/sdk/js?client-id=SB_AXCd2iEX7_x_rRbB_cfQPKfVOTah1tdxpJYlAN7dKB8K_5R7EzUTrVXNKUf1barqbDVC-UuPkjS-bRP7"></script>
+        <script>
+            paypal.Button.render({
+                // Set up a payment
+                payment: function (data, actions) {
+                    return actions.payment.create({
+                        transactions: [{
+                                amount: {
+                                    total: document.querySelector(".cart-total-price").value,
+                                    currency: 'USD'
+                                }
+                            }]
+                    });
+                },
+                // Execute the payment
+                onAuthorize: function (data, actions) {
+                    return actions.payment.execute().then(function () {
+                        // Show a confirmation message to the buyer
+                        window.alert('Thank you for your purchase!');
+                    });
+                }
+            }, '#paypal-button');
 
+        </script>
         <script src="${pageContext.request.contextPath}/static/js/jquery.min.js"></script>
         <script src="${pageContext.request.contextPath}/static/js/jquery-migrate-3.0.1.min.js"></script>
         <script src="${pageContext.request.contextPath}/static/js/bootstrap.min.js"></script>
