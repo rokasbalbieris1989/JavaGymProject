@@ -12,7 +12,7 @@
     <properties>
         <springframework.version>4.3.18.RELEASE</springframework.version>
         <springsecurity.version>4.0.4.RELEASE</springsecurity.version>
-        <hibernate.version>4.3.11.Final</hibernate.version>
+        <hibernate.version>5.3.20.Final</hibernate.version>
         <mysql.connector.version>8.0.16</mysql.connector.version>
         <jackson.library>2.7.5</jackson.library>
         <joda-time.version>2.3</joda-time.version>
